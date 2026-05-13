@@ -76,32 +76,51 @@ async function loadSeekersTestimonials() {
         const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
         
         testimonialsHTML += `
-          <div class="testimonial-with-qr">
-            <div class="testimonial-text">
-              <p>Powerful testimonial from M.L. Suriya's teachings</p>
-            </div>
-            <div class="testimonial-qr">
-              <a class="media-preview-link media-preview-link--founder" href="${videoUrl}" rel="noreferrer" aria-label="Open testimonial video">
+          <div class="video-card video-card--inline" data-video-id="${videoId}">
+            <div class="video-qr">
+              <div class="video-inline-thumb" role="button" tabindex="0" aria-label="Play testimonial video">
                 <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img src="${thumbnailUrl}" alt="Testimonial"></div>
+                  <div class="media-preview__portrait media-preview__portrait--img">
+                    <img src="${thumbnailUrl}" alt="Testimonial">
+                    <div class="video-inline-play">
+                      <svg viewBox="0 0 24 24" width="22" height="22">
+                        <circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.7)" />
+                        <polygon points="10,7 17,12 10,17" fill="white" />
+                      </svg>
+                    </div>
+                  </div>
                   <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch testimonial</span>
+                    <span class="media-preview__eyebrow">Watch story</span>
                     <span class="media-preview__title">Seeker Transformation</span>
                     <span class="media-preview__meta">Spiritual journey</span>
                   </span>
-                  <span class="media-preview__cta">Open</span>
+                  <span class="media-preview__cta">Play</span>
                 </span>
-              </a>
+              </div>
+            </div>
+            <div class="video-info">
+              <h4>Powerful testimonial from M.L. Suriya's teachings</h4>
+              <p class="video-duration">Click to play — inline</p>
             </div>
           </div>
         `;
 
-        if ((index + 1) % 3 === 0 && index < videoIds.length - 1) {
+        if ((index + 1) % 3 === 0) {
+          testimonialsHTML += createProgramsSummaryCard();
           testimonialsHTML += createPaymentCard();
         }
       });
       
+      // Ensure there's at least one set of info blocks at the end if the total count wasn't a multiple of 3
+      if (videoIds.length % 3 !== 0) {
+        testimonialsHTML += createProgramsSummaryCard();
+        testimonialsHTML += createPaymentCard();
+      }
+      
       seekersTestimonialsGrid.innerHTML = testimonialsHTML;
+      
+      // Initialize inline players for the newly loaded videos
+      initInlineVideo();
    } catch (error) {
      console.error('Error loading seekers testimonials:', error);
      seekersTestimonialsGrid.innerHTML = '<div class="error">Unable to load testimonials. Please try again later.</div>';
@@ -295,48 +314,59 @@ window.addEventListener('scroll', function() {
 // ═══════════════════════════════════════════════════════
 // INLINE YOUTUBE EMBED — Replace thumbnail with player
 // ═══════════════════════════════════════════════════════
-(function initInlineVideo() {
+function initInlineVideo() {
   function extractYouTubeId(url) {
-    const m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/) ||
-              url.match(/youtube\.com\/shorts\/([a-zA-Z0-9_-]{11})/);
+    if (!url) return null;
+    const m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/|youtube\.com\/shorts\/|youtu\.be\/)([a-zA-Z0-9_-]{11})/);
     return m ? m[1] : null;
   }
 
-  function embedVideo(videoId, container) {
+  function embedVideo(videoId, container, autoplay = false) {
     container.style.cssText = 'display:block;padding:0;min-height:0;width:100%';
     const wrapper = document.createElement('div');
-    wrapper.style.cssText = 'position:relative;width:100%;padding-bottom:56.25%;background:#000';
+    wrapper.style.cssText = 'position:relative;width:100%;padding-bottom:56.25%;background:#000;border-radius:8px;overflow:hidden;';
     const iframe = document.createElement('iframe');
-    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
+    const autoplayParam = autoplay ? '1' : '0';
+    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=${autoplayParam}&rel=0`;
     iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
     iframe.allowFullscreen = true;
+    iframe.loading = 'lazy'; // Important for performance
     iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:0';
     wrapper.appendChild(iframe);
+    container.innerHTML = '';
     container.appendChild(wrapper);
   }
 
-  // Directly disable navigation on ALL YouTube links inside video cards
-  document.querySelectorAll('.video-card a[href*="youtube.com/watch"], .video-card a[href*="youtu.be/"], .video-card a[href*="youtube.com/shorts"]').forEach(link => {
+  // 1. Convert all inline cards immediately
+  document.querySelectorAll('.video-card--inline:not([data-inline-init])').forEach(card => {
+    const videoId = card.dataset.videoId;
+    const qr = card.querySelector('.video-qr');
+    if (videoId && qr) {
+      embedVideo(videoId, qr, false);
+      card.dataset.inlineInit = 'true';
+    }
+  });
+
+  // 2. Convert standard cards immediately
+  document.querySelectorAll('.video-card:not(.video-card--inline):not([data-inline-init])').forEach(card => {
+    const link = card.querySelector('a[href*="youtube.com"], a[href*="youtu.be"]');
+    if (!link) return;
+
     const href = link.getAttribute('href');
-    if (!href) return;
     const videoId = extractYouTubeId(href);
     if (!videoId) return;
 
-    link.removeAttribute('href');
-    link.removeAttribute('target');
-    link.style.cursor = 'pointer';
-
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      const card = this.closest('.video-card');
-      if (!card) return;
-      const qr = card.querySelector('.video-qr');
-      if (!qr || qr.dataset.videoEmbedded) return;
-      qr.dataset.videoEmbedded = 'true';
-      embedVideo(videoId, qr);
-    });
+    const qr = card.querySelector('.video-qr');
+    if (qr) {
+      embedVideo(videoId, qr, false);
+      card.dataset.inlineInit = 'true';
+      card.classList.add('video-card--inline');
+    }
   });
-})();
+}
+
+// Initial call
+initInlineVideo();
 
 console.log('M.L. Suriya Landing Page loaded successfully!');
 
@@ -578,17 +608,50 @@ document.querySelectorAll('.stat--count, .stat--multiplier').forEach(function (e
 });
 
 // ═══════════════════════════════════════
-// PAYMENT CARD INSERTION
+// PROGRAM LEVELS & PAYMENT CARD INSERTION
 // ═══════════════════════════════════════
+function createProgramsSummaryCard() {
+  return `
+    <div class="program-card" onclick="window.open('https://forms.gle/qwGXxgUzmhL26No37', '_blank')" style="cursor: pointer;">
+      <div class="program-level">1</div>
+      <h3 class="program-title">RISHI <span class="devanagari">ऋष</span></h3>
+      <p class="program-duration">2 HOURS — 1 DAY</p>
+      <p class="program-cost">₹51 (Donation/योगदान)</p>
+      <p>Entry-level mastery to understand the 4-R framework.</p>
+    </div>
+    <div class="program-card" onclick="window.open('https://forms.gle/qwGXxgUzmhL26No37', '_blank')" style="cursor: pointer;">
+      <div class="program-level">2</div>
+      <h3 class="program-title">MUNI <span class="devanagari">मुन</span></h3>
+      <p class="program-duration">6 DAYS — EACH DAY 2 HOURS</p>
+      <p class="program-cost">₹51 (Donation/योगदान)</p>
+      <p>Intermediate mastery with practical application.</p>
+    </div>
+    <div class="program-card featured" onclick="window.open('https://forms.gle/qwGXxgUzmhL26No37', '_blank')" style="cursor: pointer;">
+      <div class="program-level">3</div>
+      <h3 class="program-title">YOGI <span class="devanagari">योगी</span></h3>
+      <p class="program-duration">LIFETIME — EACH DAY 1 HOUR</p>
+      <p class="program-cost">₹51 (Donation/योगदान)</p>
+      <p>Advanced mastery for continuous growth and support.</p>
+      <div class="featured-badge">Most Popular</div>
+    </div>
+  `;
+}
+
 function createPaymentCard() {
   return `
     <div class="video-card payment-card">
-      <div class="video-qr">
-        <img src="assets/qr/qr01.png" class="qr-image" alt="Support / Donation QR">
+      <div class="video-qr" style="background: linear-gradient(135deg, var(--p100) 0%, var(--p200) 100%); display: flex; align-items: center; justify-content: center; aspect-ratio: 16/9; border-radius: 8px; margin-bottom: 1rem; border: 1px solid var(--p300);">
+        <div style="text-align: center; padding: 1rem;">
+          <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;">💎</span>
+          <span style="font-weight: 700; color: var(--p700); font-size: 1.1rem; font-family: 'Cormorant Garamond', serif;">Masterclass Entry</span>
+        </div>
       </div>
       <div class="video-info">
-        <h4 style="text-align:center;">Support the Mission</h4>
-        <p class="video-duration" style="text-align:center; font-style:italic;">Donation / योगदान — Scan to contribute</p>
+        <h4 style="font-size: 1.1rem; margin-bottom: 0.4rem; color: var(--p700);">Join "धन भी ध्यान भी" Session</h4>
+        <p class="video-duration" style="margin-bottom: 1rem; color: var(--muted); font-size: 0.85rem;">₹51 Donation • Online Session</p>
+        <a href="https://forms.gle/qwGXxgUzmhL26No37" target="_blank" rel="noreferrer" class="btn btn-primary" style="width: 100%; text-align: center; font-size: 0.85rem; padding: 0.6rem 1rem; border-radius: 6px;">
+          Register (Google Form)
+        </a>
       </div>
     </div>
   `;
@@ -600,16 +663,41 @@ function insertPaymentCards() {
     if (container.id === 'seekersTestimonialsGrid') return;
     const videoCards = container.querySelectorAll(':scope > .video-card');
     if (videoCards.length === 0) return;
-    let inserted = 0;
+    
     videoCards.forEach((card, index) => {
-      if ((index + 1) % 3 === 0 && index < videoCards.length - 1) {
+      if ((index + 1) % 3 === 0) {
+        // Programs Summary Card(s) - Rishi, Muni, Yogi
+        const programsDiv = document.createElement('div');
+        programsDiv.innerHTML = createProgramsSummaryCard();
+        
+        // Insert all program cards before the payment card
+        let lastInserted = card;
+        while (programsDiv.firstElementChild) {
+          const pCard = programsDiv.firstElementChild;
+          card.parentNode.insertBefore(pCard, lastInserted.nextSibling);
+          lastInserted = pCard;
+        }
+
+        // Payment Card
         const paymentDiv = document.createElement('div');
         paymentDiv.innerHTML = createPaymentCard();
         const paymentCard = paymentDiv.firstElementChild;
-        card.parentNode.insertBefore(paymentCard, card.nextSibling);
-        inserted++;
+        card.parentNode.insertBefore(paymentCard, lastInserted.nextSibling);
       }
     });
+
+    // Also add at the very end if not already covered
+    if (videoCards.length % 3 !== 0) {
+      const programsDiv = document.createElement('div');
+      programsDiv.innerHTML = createProgramsSummaryCard();
+      while (programsDiv.firstElementChild) {
+        container.appendChild(programsDiv.firstElementChild);
+      }
+
+      const paymentDiv = document.createElement('div');
+      paymentDiv.innerHTML = createPaymentCard();
+      container.appendChild(paymentDiv.firstElementChild);
+    }
   });
 }
 
