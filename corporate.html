@@ -553,6 +553,18 @@
     </div>
   </section>
 
+  <!-- ═══════════════════════════════════════ -->
+  <!-- VIDEO MODAL -->
+  <!-- ═══════════════════════════════════════ -->
+  <div id="videoModal" class="video-modal">
+    <div class="video-modal-content">
+      <span class="video-modal-close">&times;</span>
+      <div class="video-modal-iframe-container">
+        <iframe id="videoModalIframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
+
 <script>
 // Scroll to top on page load
 window.scrollTo(0, 0);
@@ -560,6 +572,8 @@ if (window.location.hash) {
   history.replaceState(null, null, ' ');
 }
 </script>
+
+<script type="module" src="script.js"></script>
 
 </body>
 
