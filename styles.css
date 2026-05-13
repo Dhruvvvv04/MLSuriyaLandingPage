@@ -2308,6 +2308,42 @@ to {
   min-height:140px
 }
 
+.payment-card {
+  background:linear-gradient(135deg,var(--gold) 10%,#fff8e0 100%)!important;
+  border-color:var(--gold)!important
+}
+
+.payment-card .video-qr {
+  padding:1.5rem 0 0
+}
+
+.payment-card .video-qr .qr-image {
+  width:120px;
+  height:120px;
+  border-radius:8px;
+  box-shadow:0 4px 16px rgba(240,192,64,.3)
+}
+
+@media (max-width:480px) {
+  .payment-card .video-qr .qr-image {
+    width:100px;
+    height:100px
+  }
+}
+
+.payment-card .video-info {
+  padding:1rem
+}
+
+.payment-card .video-info h4 {
+  color:var(--p800);
+  margin-bottom:.25rem
+}
+
+.payment-card .video-info .video-duration {
+  color:var(--ink2)
+}
+
 .video-card .qr-placeholder,.modal-scroll .video-card .qr-placeholder {
   width:110px;
   height:110px;
@@ -3145,17 +3181,17 @@ to {
 }
 
 .four-r-framework,.modal-scroll .four-r-framework {
-  display:flex;
-  overflow-x:hidden;
-  scroll-snap-type:x mandatory;
-  scroll-behavior:smooth;
-  gap:1.5rem
+  display:grid !important;
+  grid-template-columns: 1fr !important;
+  gap:1.5rem;
+  overflow-x: visible !important;
 }
 
 .four-r-framework .four-r-item,.modal-scroll .four-r-framework .four-r-item {
-  flex:0 0 calc(50% - .75rem);
-  scroll-snap-align:start;
-  min-width:calc(50% - .75rem)
+  flex: none !important;
+  width: 100% !important;
+  scroll-snap-align: none;
+  min-width: 0;
 }
 
 .promise-grid {
@@ -3474,8 +3510,13 @@ to {
   }
   /* Four R framework */
   .four-r-framework {
-    grid-template-columns: repeat(2, 1fr) !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
     gap: 1rem;
+  }
+  .four-r-item {
+    flex: none !important;
+    width: 100% !important;
   }
   .four-r-item {
     padding: 1rem;
@@ -3573,7 +3614,8 @@ to {
     font-size: 1.5rem;
   }
   .four-r-framework {
-    grid-template-columns: repeat(2, 1fr) !important;
+    display: grid !important;
+    grid-template-columns: 1fr !important;
   }
   .program-card {
     padding: 1.25rem;

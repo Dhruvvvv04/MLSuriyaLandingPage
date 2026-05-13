@@ -10,6 +10,8 @@ const corporateCheck = document.getElementById('corporateCheck');
 const corporateContent = document.getElementById('corporateContent');
 const seekersContent = document.getElementById('seekersContent');
 const seekersTestimonialsGrid = document.getElementById('seekersTestimonialsGrid');
+const seekersModal = document.getElementById('seekersModal');
+const corporateModal = document.getElementById('corporateModal');
 
 if (corporateCheck) {
    corporateCheck.addEventListener('change', function () {
@@ -68,37 +70,38 @@ async function loadSeekersTestimonials() {
        return;
      }
      
-     // Limit to first 3 testimonials for performance
-     const limitedVideoIds = videoIds.slice(0, 3);
-     
-     // Create testimonial elements
-     const testimonialsHTML = limitedVideoIds.map(videoId => {
-       const videoUrl = `https://youtu.be/${videoId}`;
-       const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-       
-       return `
-         <div class="testimonial-with-qr">
-           <div class="testimonial-text">
-             <p>Powerful testimonial from M.L. Suriya's teachings</p>
-           </div>
-           <div class="testimonial-qr">
-             <a class="media-preview-link media-preview-link--founder" href="${videoUrl}" rel="noreferrer" aria-label="Open testimonial video">
-               <span class="media-preview">
-                 <div class="media-preview__portrait media-preview__portrait--img"><img src="${thumbnailUrl}" alt="Testimonial"></div>
-                 <span class="media-preview__copy">
-                   <span class="media-preview__eyebrow">Watch testimonial</span>
-                   <span class="media-preview__title">Seeker Transformation</span>
-                   <span class="media-preview__meta">Spiritual journey</span>
-                 </span>
-                 <span class="media-preview__cta">Open</span>
-               </span>
-             </a>
-           </div>
-         </div>
-       `;
-     }).join('');
-     
-     seekersTestimonialsGrid.innerHTML = testimonialsHTML;
+      let testimonialsHTML = '';
+      videoIds.forEach((videoId, index) => {
+        const videoUrl = `https://youtu.be/${videoId}`;
+        const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+        
+        testimonialsHTML += `
+          <div class="testimonial-with-qr">
+            <div class="testimonial-text">
+              <p>Powerful testimonial from M.L. Suriya's teachings</p>
+            </div>
+            <div class="testimonial-qr">
+              <a class="media-preview-link media-preview-link--founder" href="${videoUrl}" rel="noreferrer" aria-label="Open testimonial video">
+                <span class="media-preview">
+                  <div class="media-preview__portrait media-preview__portrait--img"><img src="${thumbnailUrl}" alt="Testimonial"></div>
+                  <span class="media-preview__copy">
+                    <span class="media-preview__eyebrow">Watch testimonial</span>
+                    <span class="media-preview__title">Seeker Transformation</span>
+                    <span class="media-preview__meta">Spiritual journey</span>
+                  </span>
+                  <span class="media-preview__cta">Open</span>
+                </span>
+              </a>
+            </div>
+          </div>
+        `;
+
+        if ((index + 1) % 3 === 0 && index < videoIds.length - 1) {
+          testimonialsHTML += createPaymentCard();
+        }
+      });
+      
+      seekersTestimonialsGrid.innerHTML = testimonialsHTML;
    } catch (error) {
      console.error('Error loading seekers testimonials:', error);
      seekersTestimonialsGrid.innerHTML = '<div class="error">Unable to load testimonials. Please try again later.</div>';
@@ -168,12 +171,12 @@ document.querySelectorAll('.seekers-card').forEach(card => {
 
 // Close modal when clicking outside content
 window.addEventListener('click', function (e) {
-  if (e.target === corporateModal) {
+  if (corporateModal && e.target === corporateModal) {
     corporateModal.style.display = 'none';
     document.body.style.overflow = 'auto';
   }
 
-  if (e.target === seekersModal) {
+  if (seekersModal && e.target === seekersModal) {
     seekersModal.style.display = 'none';
     document.body.style.overflow = 'auto';
   }
@@ -573,3 +576,45 @@ const countObserver = new IntersectionObserver(function (entries) {
 document.querySelectorAll('.stat--count, .stat--multiplier').forEach(function (el) {
   countObserver.observe(el);
 });
+
+// ═══════════════════════════════════════
+// PAYMENT CARD INSERTION
+// ═══════════════════════════════════════
+function createPaymentCard() {
+  return `
+    <div class="video-card payment-card">
+      <div class="video-qr">
+        <img src="assets/qr/qr01.png" class="qr-image" alt="Support / Donation QR">
+      </div>
+      <div class="video-info">
+        <h4 style="text-align:center;">Support the Mission</h4>
+        <p class="video-duration" style="text-align:center; font-style:italic;">Donation / योगदान — Scan to contribute</p>
+      </div>
+    </div>
+  `;
+}
+
+function insertPaymentCards() {
+  const containers = document.querySelectorAll('.testimonials-grid, .videos-grid');
+  containers.forEach(container => {
+    if (container.id === 'seekersTestimonialsGrid') return;
+    const videoCards = container.querySelectorAll(':scope > .video-card');
+    if (videoCards.length === 0) return;
+    let inserted = 0;
+    videoCards.forEach((card, index) => {
+      if ((index + 1) % 3 === 0 && index < videoCards.length - 1) {
+        const paymentDiv = document.createElement('div');
+        paymentDiv.innerHTML = createPaymentCard();
+        const paymentCard = paymentDiv.firstElementChild;
+        card.parentNode.insertBefore(paymentCard, card.nextSibling);
+        inserted++;
+      }
+    });
+  });
+}
+
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', insertPaymentCards);
+} else {
+  insertPaymentCards();
+}
