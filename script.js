@@ -616,21 +616,18 @@ function createProgramsSummaryCard() {
       <div class="program-level">1</div>
       <h3 class="program-title">RISHI <span class="devanagari">ऋषि</span></h3>
       <p class="program-duration">2 HOURS — 1 DAY</p>
-      <p class="program-cost">₹51 (Donation/योगदान)</p>
       <p>Entry-level mastery to understand the 4-R framework.</p>
     </div>
     <div class="program-card" onclick="window.open('https://forms.gle/qwGXxgUzmhL26No37', '_blank')" style="cursor: pointer;">
       <div class="program-level">2</div>
       <h3 class="program-title">MUNI <span class="devanagari">मुनि</span></h3>
       <p class="program-duration">6 DAYS — EACH DAY 2 HOURS</p>
-      <p class="program-cost">₹51 (Donation/योगदान)</p>
       <p>Intermediate mastery with practical application.</p>
     </div>
     <div class="program-card featured" onclick="window.open('https://forms.gle/qwGXxgUzmhL26No37', '_blank')" style="cursor: pointer;">
       <div class="program-level">3</div>
       <h3 class="program-title">YOGI <span class="devanagari">योगी</span></h3>
       <p class="program-duration">LIFETIME — EACH DAY 1 HOUR</p>
-      <p class="program-cost">₹51 (Donation/योगदान)</p>
       <p>Advanced mastery for continuous growth and support.</p>
       <div class="featured-badge">Most Popular</div>
     </div>
@@ -643,7 +640,6 @@ function createPaymentCard() {
       <div class="program-level">✓</div>
       <h3 class="program-title">PAYMENT & REGISTRATION</h3>
       <p class="program-duration">ENTRY मास्टरक्लास</p>
-      <p class="program-cost">₹51 (Donation/योगदान)</p>
       <p>Secure your spot and begin your transformation journey today.</p>
       <div class="featured-badge" style="background: #4a1f94;">Register Now</div>
     </div>
