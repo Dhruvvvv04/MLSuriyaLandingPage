@@ -14,68 +14,68 @@ const seekersModal = document.getElementById('seekersModal');
 const corporateModal = document.getElementById('corporateModal');
 
 if (corporateCheck) {
-   corporateCheck.addEventListener('change', function () {
-     if (this.checked) {
-       seekersCheck.checked = false;
-       if (seekersContent) seekersContent.style.display = 'none';
-       if (corporateContent) {
-         corporateContent.style.display = 'block';
-         setTimeout(() => corporateContent.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
-       }
-     } else {
-       if (corporateContent) corporateContent.style.display = 'none';
-     }
-   });
+  corporateCheck.addEventListener('change', function () {
+    if (this.checked) {
+      seekersCheck.checked = false;
+      if (seekersContent) seekersContent.style.display = 'none';
+      if (corporateContent) {
+        corporateContent.style.display = 'block';
+        setTimeout(() => corporateContent.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+      }
+    } else {
+      if (corporateContent) corporateContent.style.display = 'none';
+    }
+  });
 }
 
 if (seekersCheck) {
-   seekersCheck.addEventListener('change', function () {
-     if (this.checked) {
-       corporateCheck.checked = false;
-       if (corporateContent) corporateContent.style.display = 'none';
-       if (seekersContent) {
-         seekersContent.style.display = 'block';
-         loadSeekersTestimonials();
-         setTimeout(() => seekersContent.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
-       }
-     } else {
-       if (seekersContent) seekersContent.style.display = 'none';
-     }
-   });
+  seekersCheck.addEventListener('change', function () {
+    if (this.checked) {
+      corporateCheck.checked = false;
+      if (corporateContent) corporateContent.style.display = 'none';
+      if (seekersContent) {
+        seekersContent.style.display = 'block';
+        // loadSeekersTestimonials(); // Disable dynamic loading to use static content in index.html
+        setTimeout(() => seekersContent.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+      }
+    } else {
+      if (seekersContent) seekersContent.style.display = 'none';
+    }
+  });
 }
 
 // Function to load testimonials from YouTube playlist
 async function loadSeekersTestimonials() {
-   if (!seekersTestimonialsGrid) return;
-   
-   // Show loading state
-   seekersTestimonialsGrid.innerHTML = '<div class="loading">Loading testimonials...</div>';
-   
-   try {
-     // Fetch videos from the YouTube playlist
-     const playlistId = 'PLnPhRppRs8_MZ1Nkj7r6vLi9v0T7XnHQY';
-     
-     // Alternative approach: fetch playlist page and extract video data
-     const response = await fetch(`https://www.youtube.com/playlist?list=${playlistId}`);
-     if (!response.ok) {
-       throw new Error('Failed to fetch playlist');
-     }
-     
-     const html = await response.text();
-     // Extract video IDs from the playlist page
-     const videoIds = extractVideoIdsFromPlaylist(html);
-     
-     if (videoIds.length === 0) {
-       seekersTestimonialsGrid.innerHTML = '<div class="error">No testimonials found</div>';
-       return;
-     }
-     
-      let testimonialsHTML = '';
-      videoIds.forEach((videoId, index) => {
-        const videoUrl = `https://youtu.be/${videoId}`;
-        const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
-        
-        testimonialsHTML += `
+  if (!seekersTestimonialsGrid) return;
+
+  // Show loading state
+  seekersTestimonialsGrid.innerHTML = '<div class="loading">Loading testimonials...</div>';
+
+  try {
+    // Fetch videos from the YouTube playlist
+    const playlistId = 'PLnPhRppRs8_MZ1Nkj7r6vLi9v0T7XnHQY';
+
+    // Alternative approach: fetch playlist page and extract video data
+    const response = await fetch(`https://www.youtube.com/playlist?list=${playlistId}`);
+    if (!response.ok) {
+      throw new Error('Failed to fetch playlist');
+    }
+
+    const html = await response.text();
+    // Extract video IDs from the playlist page
+    const videoIds = extractVideoIdsFromPlaylist(html);
+
+    if (videoIds.length === 0) {
+      seekersTestimonialsGrid.innerHTML = '<div class="error">No testimonials found</div>';
+      return;
+    }
+
+    let testimonialsHTML = '';
+    videoIds.forEach((videoId, index) => {
+      const videoUrl = `https://youtu.be/${videoId}`;
+      const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`;
+
+      testimonialsHTML += `
           <div class="video-card video-card--inline" data-video-id="${videoId}">
             <div class="video-qr">
               <div class="video-inline-thumb" role="button" tabindex="0" aria-label="Play testimonial video">
@@ -105,87 +105,87 @@ async function loadSeekersTestimonials() {
           </div>
         `;
 
-        if ((index + 1) % 3 === 0) {
-          testimonialsHTML += createProgramsSummaryCard();
-          testimonialsHTML += createPaymentCard();
-        }
-      });
-      
-      // Ensure there's at least one set of info blocks at the end if the total count wasn't a multiple of 3
-      if (videoIds.length % 3 !== 0) {
+      if ((index + 1) % 3 === 0) {
         testimonialsHTML += createProgramsSummaryCard();
         testimonialsHTML += createPaymentCard();
       }
-      
-      seekersTestimonialsGrid.innerHTML = testimonialsHTML;
-      
-      // Initialize inline players for the newly loaded videos
-      initInlineVideo();
-   } catch (error) {
-     console.error('Error loading seekers testimonials:', error);
-     seekersTestimonialsGrid.innerHTML = '<div class="error">Unable to load testimonials. Please try again later.</div>';
-   }
+    });
+
+    // Ensure there's at least one set of info blocks at the end if the total count wasn't a multiple of 3
+    if (videoIds.length % 3 !== 0) {
+      testimonialsHTML += createProgramsSummaryCard();
+      testimonialsHTML += createPaymentCard();
+    }
+
+    seekersTestimonialsGrid.innerHTML = testimonialsHTML;
+
+    // Initialize inline players for the newly loaded videos
+    initInlineVideo();
+  } catch (error) {
+    console.error('Error loading seekers testimonials:', error);
+    seekersTestimonialsGrid.innerHTML = '<div class="error">Unable to load testimonials. Please try again later.</div>';
+  }
 }
 
 // Helper function to extract video IDs from YouTube playlist page
 function extractVideoIdsFromPlaylist(html) {
-   const videoIds = [];
-   const regex = /"videoId":"([^"]+)"/g;
-   let match;
-   
-   while ((match = regex.exec(html)) !== null) {
-     videoIds.push(match[1]);
-   }
-   
-   // Remove duplicates while preserving order
-   return [...new Set(videoIds)];
+  const videoIds = [];
+  const regex = /"videoId":"([^"]+)"/g;
+  let match;
+
+  while ((match = regex.exec(html)) !== null) {
+    videoIds.push(match[1]);
+  }
+
+  // Remove duplicates while preserving order
+  return [...new Set(videoIds)];
 }
 
 document.querySelectorAll('.seekers-card').forEach(card => {
-   card.setAttribute('role', 'button');
-   card.setAttribute('tabindex', '0');
+  card.setAttribute('role', 'button');
+  card.setAttribute('tabindex', '0');
 
-   const titleElement = card.querySelector('h3');
-   const title = titleElement ? titleElement.textContent.trim() : 'Seeker Detail';
-   
-   // Updated details object for fallback
-   const details = {
-     subtitle: 'Non-Corporate Spiritual Seekers Special Session',
-     heading: title,
-     description: card.querySelector('p') ? card.querySelector('p').textContent.trim() : 'Expanded session detail.',
-     focus: 'Practical guidance',
-     outcome: 'Meaningful transformation'
-   };
+  const titleElement = card.querySelector('h3');
+  const title = titleElement ? titleElement.textContent.trim() : 'Seeker Detail';
 
-   const openSeekersModal = () => {
-     if (!seekersModal) {
-       return;
-     }
+  // Updated details object for fallback
+  const details = {
+    subtitle: 'Non-Corporate Spiritual Seekers Special Session',
+    heading: title,
+    description: card.querySelector('p') ? card.querySelector('p').textContent.trim() : 'Expanded session detail.',
+    focus: 'Practical guidance',
+    outcome: 'Meaningful transformation'
+  };
 
-     // Update modal header with card-specific info
-     document.getElementById('seekersModalTitle').textContent = title;
-     document.getElementById('seekersModalSubtitle').textContent = details.subtitle;
-     document.getElementById('seekersModalHeading').textContent = details.heading;
-     
-     // Focus and outcome remain static for now
-     document.getElementById('seekersModalFocus').textContent = details.focus;
-     document.getElementById('seekersModalOutcome').textContent = details.outcome;
-     
-      seekersModal.style.display = 'flex';
-      document.body.style.overflow = 'hidden';
-      // Scroll modal content to top
-      const scrollEl = seekersModal.querySelector('.modal-scroll');
-      if (scrollEl) scrollEl.scrollTop = 0;
-    };
+  const openSeekersModal = () => {
+    if (!seekersModal) {
+      return;
+    }
 
-    card.addEventListener('click', openSeekersModal);
+    // Update modal header with card-specific info
+    document.getElementById('seekersModalTitle').textContent = title;
+    document.getElementById('seekersModalSubtitle').textContent = details.subtitle;
+    document.getElementById('seekersModalHeading').textContent = details.heading;
 
-   card.addEventListener('keydown', function (e) {
-     if (e.key === 'Enter' || e.key === ' ') {
-       e.preventDefault();
-       openSeekersModal();
-     }
-   });
+    // Focus and outcome remain static for now
+    document.getElementById('seekersModalFocus').textContent = details.focus;
+    document.getElementById('seekersModalOutcome').textContent = details.outcome;
+
+    seekersModal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
+    // Scroll modal content to top
+    const scrollEl = seekersModal.querySelector('.modal-scroll');
+    if (scrollEl) scrollEl.scrollTop = 0;
+  };
+
+  card.addEventListener('click', openSeekersModal);
+
+  card.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      openSeekersModal();
+    }
+  });
 });
 
 // Close modal when clicking outside content
@@ -235,11 +235,11 @@ const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
   contactForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    
+
     // Get form values
     const formData = new FormData(this);
     const data = Object.fromEntries(formData);
-    
+
     // Show success message
     alert('Thank you for reaching out! We will contact you soon.');
     this.reset();
@@ -252,7 +252,7 @@ const revealObserverOptions = {
   rootMargin: '0px 0px -40px 0px'
 };
 
-const revealObserver = new IntersectionObserver(function(entries) {
+const revealObserver = new IntersectionObserver(function (entries) {
   entries.forEach((entry, index) => {
     if (entry.isIntersecting) {
       // Add staggered delay based on position in viewport
@@ -297,9 +297,9 @@ document.querySelectorAll(revealSelectors.join(', ')).forEach((el, index) => {
 const navbar = document.querySelector('.navbar');
 let lastScrollTop = 0;
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  
+
   if (scrollTop > 80) {
     navbar.style.boxShadow = '0 8px 32px rgba(107, 53, 200, 0.1)';
     navbar.style.background = 'rgba(255, 255, 255, 0.85)';
@@ -307,7 +307,7 @@ window.addEventListener('scroll', function() {
     navbar.style.boxShadow = 'none';
     navbar.style.background = 'rgba(255, 255, 255, 0.65)';
   }
-  
+
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
 
@@ -395,7 +395,7 @@ function slowScrollTo(element, target, duration) {
     const elapsed = currentTime - startTime;
     const progress = Math.min(elapsed / duration, 1);
     const ease = progress < 0.5 ? 2 * progress * progress : 1 - Math.pow(-2 * progress + 2, 2) / 2;
-    
+
     element.scrollLeft = start + change * ease;
 
     if (progress < 1) {
@@ -415,11 +415,11 @@ setInterval(() => {
       // Check if this framework's modal is visible and cloned
       if (fw.offsetParent !== null && fw.children.length >= 8) {
         const currentScroll = fw.scrollLeft;
-        
+
         // Calculate exact offsets
         const target2 = fw.children[2].offsetLeft - fw.children[0].offsetLeft;
         const target4 = fw.children[4].offsetLeft - fw.children[0].offsetLeft;
-        
+
         if (currentScroll >= target4 - 10) {
           // Instantly jump back to start without animation
           fw.style.scrollBehavior = 'auto';
@@ -474,17 +474,17 @@ if (particlesContainer) {
   function openVideoModal(e) {
     let target = e.currentTarget;
     if (!target) return;
-    
+
     // Find the closest a tag if clicked inside
     if (target.tagName !== 'A') {
-        target = target.closest('a');
+      target = target.closest('a');
     }
 
     if (!target || !target.href) return;
-    
+
     // Check if it's a youtube link
     if (!target.href.includes('youtube.com') && !target.href.includes('youtu.be')) {
-        return; // Not a youtube link, let default behavior happen
+      return; // Not a youtube link, let default behavior happen
     }
 
     e.preventDefault();
@@ -495,8 +495,8 @@ if (particlesContainer) {
       videoIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
       videoModal.classList.add('show');
     } else {
-        // Fallback: just open the link if we can't parse it
-        window.open(target.href, '_blank');
+      // Fallback: just open the link if we can't parse it
+      window.open(target.href, '_blank');
     }
   }
 
@@ -512,8 +512,8 @@ if (particlesContainer) {
   const videoLinks = document.querySelectorAll('.media-preview-link, .video-info a, .video-card a');
   videoLinks.forEach(link => {
     // Only attach to links that point to youtube
-    if(link.href && (link.href.includes('youtube.com') || link.href.includes('youtu.be'))) {
-        link.addEventListener('click', openVideoModal);
+    if (link.href && (link.href.includes('youtube.com') || link.href.includes('youtu.be'))) {
+      link.addEventListener('click', openVideoModal);
     }
   });
 
@@ -614,14 +614,14 @@ function createProgramsSummaryCard() {
   return `
     <div class="program-card" onclick="window.open('https://forms.gle/qwGXxgUzmhL26No37', '_blank')" style="cursor: pointer;">
       <div class="program-level">1</div>
-      <h3 class="program-title">RISHI <span class="devanagari">ऋष</span></h3>
+      <h3 class="program-title">RISHI <span class="devanagari">ऋषि</span></h3>
       <p class="program-duration">2 HOURS — 1 DAY</p>
       <p class="program-cost">₹51 (Donation/योगदान)</p>
       <p>Entry-level mastery to understand the 4-R framework.</p>
     </div>
     <div class="program-card" onclick="window.open('https://forms.gle/qwGXxgUzmhL26No37', '_blank')" style="cursor: pointer;">
       <div class="program-level">2</div>
-      <h3 class="program-title">MUNI <span class="devanagari">मुन</span></h3>
+      <h3 class="program-title">MUNI <span class="devanagari">मुनि</span></h3>
       <p class="program-duration">6 DAYS — EACH DAY 2 HOURS</p>
       <p class="program-cost">₹51 (Donation/योगदान)</p>
       <p>Intermediate mastery with practical application.</p>
@@ -639,37 +639,31 @@ function createProgramsSummaryCard() {
 
 function createPaymentCard() {
   return `
-    <div class="video-card payment-card">
-      <div class="video-qr" style="background: linear-gradient(135deg, var(--p100) 0%, var(--p200) 100%); display: flex; align-items: center; justify-content: center; aspect-ratio: 16/9; border-radius: 8px; margin-bottom: 1rem; border: 1px solid var(--p300);">
-        <div style="text-align: center; padding: 1rem;">
-          <span style="font-size: 2.5rem; display: block; margin-bottom: 0.5rem;">💎</span>
-          <span style="font-weight: 700; color: var(--p700); font-size: 1.1rem; font-family: 'Cormorant Garamond', serif;">Masterclass Entry</span>
-        </div>
-      </div>
-      <div class="video-info">
-        <h4 style="font-size: 1.1rem; margin-bottom: 0.4rem; color: var(--p700);">Join "धन भी ध्यान भी" Session</h4>
-        <p class="video-duration" style="margin-bottom: 1rem; color: var(--muted); font-size: 0.85rem;">₹51 Donation • Online Session</p>
-        <a href="https://forms.gle/qwGXxgUzmhL26No37" target="_blank" rel="noreferrer" class="btn btn-primary" style="width: 100%; text-align: center; font-size: 0.85rem; padding: 0.6rem 1rem; border-radius: 6px;">
-          Register (Google Form)
-        </a>
-      </div>
+    <div class="program-card payment-card" onclick="window.open('https://forms.gle/qwGXxgUzmhL26No37', '_blank')" style="cursor: pointer; border-left: 4px solid #4a1f94;">
+      <div class="program-level">✓</div>
+      <h3 class="program-title">PAYMENT & REGISTRATION</h3>
+      <p class="program-duration">ENTRY मास्टरक्लास</p>
+      <p class="program-cost">₹51 (Donation/योगदान)</p>
+      <p>Secure your spot and begin your transformation journey today.</p>
+      <div class="featured-badge" style="background: #4a1f94;">Register Now</div>
     </div>
   `;
 }
 
+
 function insertPaymentCards() {
   const containers = document.querySelectorAll('.testimonials-grid, .videos-grid');
   containers.forEach(container => {
-    if (container.id === 'seekersTestimonialsGrid') return;
+    if (container.closest('#about')) return;
     const videoCards = container.querySelectorAll(':scope > .video-card');
     if (videoCards.length === 0) return;
-    
+
     videoCards.forEach((card, index) => {
       if ((index + 1) % 3 === 0) {
         // Programs Summary Card(s) - Rishi, Muni, Yogi
         const programsDiv = document.createElement('div');
         programsDiv.innerHTML = createProgramsSummaryCard();
-        
+
         // Insert all program cards before the payment card
         let lastInserted = card;
         while (programsDiv.firstElementChild) {

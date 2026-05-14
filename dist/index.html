@@ -8,8 +8,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Noto+Serif+Devanagari:wght@400;500;600&display=swap"
     rel="stylesheet">
-  <script type="module" crossorigin src="/assets/index-DvNcoaxt.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-CYmiEnyC.css">
+  <script type="module" crossorigin src="/assets/index-CA-WG-dc.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DSg3p99y.css">
 </head>
 
 <body>
@@ -40,8 +40,12 @@
     <div class="hero-backdrop hero-backdrop--pillar hero-backdrop--pillar-right"></div>
     <div class="aura-orb aura-orb-1"></div>
     <div class="aura-orb aura-orb-2"></div>
+    <div class="hero-particles"></div>
     <div class="container">
       <div class="hero-content">
+        <div class="hero-profile">
+          <img src="/assets/ml-suriya-BT8m_HFe.jpg" alt="M.L. Suriya">
+        </div>
         <h1 class="font-display">धन भी ध्यान भी</h1>
         <p class="hero-subtitle">Entry मास्टरक्लास</p>
         <p class="hero-tagline">Where Profit Meets Peace & Endless Happiness</p>
@@ -49,22 +53,31 @@
           spiritual growth or corporate spiritual clarity.</p>
         <p class="hero-meta">Non-Corporate Spiritual Seekers • 8 AM – 10 AM | Corporate Spiritual Seekers • 11 AM – 1 PM
         </p>
-        <div class="hero-cta">
-          <button class="btn btn-primary" id="seekersBtn">🌿 Non-Corporate Seekers</button>
-          <button class="btn btn-secondary" id="corporateBtn">💼 Corporate Professionals</button>
+        <p class="hero-select-prompt">Select the path that describes you:</p>
+        <div class="hero-cta hero-cta--checkboxes reveal reveal-delay-3">
+          <label class="checkbox-card" for="seekersCheck">
+            <input type="checkbox" id="seekersCheck" class="checkbox-card__input">
+            <span class="checkbox-card__check"></span>
+            <span class="checkbox-card__icon">🌿</span>
+            <span class="checkbox-card__label">Non-Corporate Seekers</span>
+          </label>
+          <label class="checkbox-card" for="corporateCheck">
+            <input type="checkbox" id="corporateCheck" class="checkbox-card__input">
+            <span class="checkbox-card__check"></span>
+            <span class="checkbox-card__icon">💼</span>
+            <span class="checkbox-card__label">Corporate Professionals</span>
+          </label>
         </div>
       </div>
     </div>
   </section>
 
   <!-- ═══════════════════════════════════════ -->
-  <!-- CORPORATE MODAL -->
+  <!-- CORPORATE CONTENT (inline toggle) -->
   <!-- ═══════════════════════════════════════ -->
-  <div id="corporateModal" class="modal">
-    <div class="modal-content">
-      <button class="modal-close">&times;</button>
-
-      <div class="modal-scroll">
+  <div id="corporateContent" class="toggle-content">
+    <div class="container">
+      <div class="toggle-content__card">
         <!-- Session Banner -->
         <div class="session-banner corporate-banner" style="margin-bottom: 2rem;">
           <div class="banner-icon">💼</div>
@@ -77,11 +90,14 @@
 
         <!-- Corporate Promise -->
         <div class="corporate-promise">
-          <div class="promise-grid" style="grid-template-columns: 1fr 1fr; background: transparent; border: none; padding: 0 0 0.5rem; margin-bottom: 0.5rem;">
-            <div style="text-align: center; font-size: 1.3rem; font-weight: 700; color: var(--p600); padding: 0.5rem 1rem;">
+          <div class="promise-grid"
+            style="grid-template-columns: 1fr 1fr; background: transparent; border: none; padding: 0 0 0.5rem; margin-bottom: 0.5rem;">
+            <div
+              style="text-align: center; font-size: 1.3rem; font-weight: 700; color: var(--p600); padding: 0.5rem 1rem;">
               Do you feel this?
             </div>
-            <div style="text-align: center; font-size: 1.3rem; font-weight: 700; color: var(--p600); padding: 0.5rem 1rem; border-left: 2px solid var(--p300);">
+            <div
+              style="text-align: center; font-size: 1.3rem; font-weight: 700; color: var(--p600); padding: 0.5rem 1rem; border-left: 2px solid var(--p300);">
               अब समाधान है
             </div>
           </div>
@@ -114,7 +130,8 @@
 
         <!-- 4-R Framework -->
         <div class="section-header">
-          <p class="section-subtitle" style="font-size: 1.6rem; font-weight: 700; color: var(--p700);">4-R लाइफ फॉर्मूला</p>
+          <p class="section-subtitle" style="font-size: 1.6rem; font-weight: 700; color: var(--p700);">4-R लाइफ फॉर्मूला
+          </p>
         </div>
 
         <div class="four-r-framework">
@@ -146,11 +163,13 @@
 
         <!-- Spiritual Clarity -->
         <div class="section-header">
-          <p style="font-size: 1.6rem; font-weight: 700; color: var(--p700); margin-bottom: 0.3rem;">संभाव से सब संभव</p>
+          <p style="font-size: 1.6rem; font-weight: 700; color: var(--p700); margin-bottom: 0.3rem;">संभाव से सब संभव
+          </p>
           <p style="font-size: 1.2rem; font-weight: 500; color: var(--ink2);">और संभाव संवाद से</p>
         </div>
 
-        <p style="font-size: 1.3rem; font-weight: 600; text-align: center; color: var(--ink2); line-height: 1.6; margin-bottom: 2rem;">
+        <p
+          style="font-size: 1.3rem; font-weight: 600; text-align: center; color: var(--ink2); line-height: 1.6; margin-bottom: 2rem;">
           Build scalable, sustainable business processes with inner wisdom at the core.
         </p>
 
@@ -176,14 +195,17 @@
           <div class="card corporate-card">
             <div class="card-icon">🤝</div>
             <h3>Customer-Supplier Harmony</h3>
-            <p>Build trust and long-term partnerships through spiritual clarity and equanimous value not just price creation.</p>
+            <p>Build trust and long-term partnerships through spiritual clarity and equanimous value not just price
+              creation.</p>
           </div>
         </div>
 
         <!-- Improved Relations & Respect -->
         <div class="section-header" style="margin-top: 3rem;">
           <h2 class="font-display">IMPROVED RELATIONS & RESPECT</h2>
-          <p class="section-subtitle">समभाव, संवाद से!</p>
+          <p class="section-subtitle">समभाव, सम्वाद से ! सम्वाद, "अनेकान्त" से ! "अनेकान्त" ही मूल है, बाकी सब भूल है !
+          </p>
+          <h3 style="text-align: center;">One life formula</h3>
         </div>
 
         <div class="corporate-grid">
@@ -206,67 +228,60 @@
         </div>
 
         <div class="testimonials-grid">
-          <div class="video-card">
+          <div class="video-card video-card--inline" data-video-id="iTjkwU1_SOw">
             <div class="video-qr">
-              <a class="media-preview-link media-preview-link--founder" href="https://youtu.be/GHE7cG7YQeM"
-                target="_blank" rel="noreferrer" aria-label="Open M.L. Suriya story">
+              <div class="video-inline-thumb" role="button" tabindex="0" aria-label="Play M.L. Suriya video">
                 <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img
-                      src="https://img.youtube.com/vi/GHE7cG7YQeM/hqdefault.jpg" alt="M.L. Suriya"></div>
+                  <div class="media-preview__portrait media-preview__portrait--img">
+                    <img src="https://img.youtube.com/vi/iTjkwU1_SOw/hqdefault.jpg" alt="M.L. Suriya">
+                    <div class="video-inline-play">
+                      <svg viewBox="0 0 24 24" width="22" height="22">
+                        <circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.7)" />
+                        <polygon points="10,7 17,12 10,17" fill="white" />
+                      </svg>
+                    </div>
+                  </div>
                   <span class="media-preview__copy">
                     <span class="media-preview__eyebrow">Watch story</span>
                     <span class="media-preview__title">M.L. Suriya</span>
                     <span class="media-preview__meta">Founder spotlight</span>
                   </span>
-                  <span class="media-preview__cta">Open</span>
+                  <span class="media-preview__cta">Play</span>
                 </span>
-              </a>
+              </div>
             </div>
             <div class="video-info">
-              <h4><a href="https://youtu.be/GHE7cG7YQeM" target="_blank" rel="noreferrer">धन भी ध्यान भी: की Entry मास्टरक्लास Through 4-R Life Success System - Where Profit Meets Peace &amp; Endless Happiness.</a></h4>
-              <p class="video-duration">Watch on YouTube</p>
+              <h4><a href="https://youtube.com/shorts/iTjkwU1_SOw" target="_blank" rel="noreferrer">M.L. Suriya —
+                  Founder Spotlight</a></h4>
+              <p class="video-duration">Click to play — inline</p>
             </div>
           </div>
-          <div class="video-card">
+          <div class="video-card video-card--inline" data-video-id="VXq3mJDDGtQ">
             <div class="video-qr">
-              <a class="media-preview-link media-preview-link--client" href="https://youtu.be/f13nS_iPhjQ"
-                target="_blank" rel="noreferrer" aria-label="Open Bhavin Soni story">
+              <div class="video-inline-thumb" role="button" tabindex="0" aria-label="Play Bhavin Soni video">
                 <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img
-                      src="https://img.youtube.com/vi/f13nS_iPhjQ/hqdefault.jpg" alt="Bhavin Soni"></div>
+                  <div class="media-preview__portrait media-preview__portrait--img">
+                    <img src="https://img.youtube.com/vi/VXq3mJDDGtQ/hqdefault.jpg" alt="Bhavin Soni">
+                    <div class="video-inline-play">
+                      <svg viewBox="0 0 24 24" width="22" height="22">
+                        <circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.7)" />
+                        <polygon points="10,7 17,12 10,17" fill="white" />
+                      </svg>
+                    </div>
+                  </div>
                   <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Client spotlight</span>
+                    <span class="media-preview__eyebrow">Watch story</span>
                     <span class="media-preview__title">Bhavin Soni</span>
-                    <span class="media-preview__meta">Profit + peace story</span>
+                    <span class="media-preview__meta">Corporate experience</span>
                   </span>
-                  <span class="media-preview__cta">Open</span>
+                  <span class="media-preview__cta">Play</span>
                 </span>
-              </a>
+              </div>
             </div>
             <div class="video-info">
-              <h4><a href="https://youtu.be/f13nS_iPhjQ" target="_blank" rel="noreferrer">Peaceful Profit Monk is not just a name - it's a reality. Double Profit results with Spirituality for Corporates.</a></h4>
-              <p class="video-duration">Watch on YouTube</p>
-            </div>
-          </div>
-          <div class="video-card">
-            <div class="video-qr">
-              <a class="media-preview-link media-preview-link--doctor" href="https://youtube.com/shorts/3uRj5R1ekw4"
-                target="_blank" rel="noreferrer" aria-label="Open Dr. Paras story">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img
-                      src="https://img.youtube.com/vi/3uRj5R1ekw4/hqdefault.jpg" alt="Dr. Paras"></div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Transformation</span>
-                    <span class="media-preview__title">Dr. Paras</span>
-                    <span class="media-preview__meta">Mental shift journey</span>
-                  </span>
-                  <span class="media-preview__cta">Open</span>
-                </span>
-              </a>
-            </div>
-            <div class="video-info">
-              <h4><a href="https://youtube.com/shorts/3uRj5R1ekw4" target="_blank" rel="noreferrer">From Highly low Mental state (भखारी) to infinite joy (राजा) - a complete life transformation in just few weeks. Currently pursuing Advanced Lifetime Yogi Program.</a></h4>
-              <p class="video-duration">Watch on YouTube</p>
+              <h4><a href="https://youtu.be/VXq3mJDDGtQ" target="_blank" rel="noreferrer">Inspiring Feedback by MR
+                  Bhavin Soni and many other Corporates.</a></h4>
+              <p class="video-duration">Click to play — inline</p>
             </div>
           </div>
         </div>
@@ -403,28 +418,7 @@
               <p class="video-duration">3:03</p>
             </div>
           </div>
-          <div class="video-card">
-            <div class="video-qr">
-              <a class="media-preview-link media-preview-link--teal" href="https://www.youtube.com/watch?v=ESGVIKveXZQ"
-                target="_blank" rel="noreferrer"
-                aria-label="Open Beyond Doubling Profits Easily just in 3 months story">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img
-                      src="https://img.youtube.com/vi/ESGVIKveXZQ/hqdefault.jpg" alt="Three-month lift"></div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch clip</span>
-                    <span class="media-preview__title">Three-month lift</span>
-                    <span class="media-preview__meta">Fast turnaround</span>
-                  </span>
-                  <span class="media-preview__cta">Play</span>
-                </span>
-              </a>
-            </div>
-            <div class="video-info">
-              <h4>Beyond Doubling Profits Easily just in 3 months</h4>
-              <p class="video-duration">9:03</p>
-            </div>
-          </div>
+
           <div class="video-card">
             <div class="video-qr">
               <a class="media-preview-link media-preview-link--violet"
@@ -447,13 +441,19 @@
               <p class="video-duration">5:43</p>
             </div>
           </div>
-          <div class="video-card">
+          <div class="video-card video-card--inline" data-video-id="be_v1SagU7c">
             <div class="video-qr">
-              <a class="media-preview-link media-preview-link--gold" href="https://www.youtube.com/watch?v=be_v1SagU7c"
-                target="_blank" rel="noreferrer" aria-label="Open Lean akar वर्कर की सोच बदल दी story">
+              <div class="video-inline-thumb" role="button" tabindex="0" aria-label="Play Lean akar video">
                 <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img
-                      src="https://img.youtube.com/vi/be_v1SagU7c/hqdefault.jpg" alt="Lean worker"></div>
+                  <div class="media-preview__portrait media-preview__portrait--img">
+                    <img src="https://img.youtube.com/vi/be_v1SagU7c/hqdefault.jpg" alt="Lean worker">
+                    <div class="video-inline-play">
+                      <svg viewBox="0 0 24 24" width="22" height="22">
+                        <circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.7)" />
+                        <polygon points="10,7 17,12 10,17" fill="white" />
+                      </svg>
+                    </div>
+                  </div>
                   <span class="media-preview__copy">
                     <span class="media-preview__eyebrow">Inside story</span>
                     <span class="media-preview__title">Lean worker</span>
@@ -461,32 +461,42 @@
                   </span>
                   <span class="media-preview__cta">Play</span>
                 </span>
-              </a>
+              </div>
             </div>
             <div class="video-info">
               <h4>Lean akar वर्कर की सोच बदल दी</h4>
-              <p class="video-duration">1:30</p>
+              <p class="video-duration">Click to play — inline</p>
             </div>
           </div>
-          <div class="video-card">
+          <div class="video-card video-card--inline" data-video-id="Q3BKJpUKIUU">
             <div class="video-qr">
-              <a class="media-preview-link media-preview-link--client" href="https://youtu.be/3uRj5R1ekw4?si=5CKomlreVvjuWsLL" target="_blank" rel="noreferrer" aria-label="Open Inspiring Feedback : DR. Paras">
+              <div class="video-inline-thumb" role="button" tabindex="0" aria-label="Play Summangala ji video">
                 <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img src="https://i.ytimg.com/vi/3uRj5R1ekw4/hqdefault.jpg" alt="Inspiring Feedback : DR. Paras"></div>
+                  <div class="media-preview__portrait media-preview__portrait--img">
+                    <img src="https://i.ytimg.com/vi/Q3BKJpUKIUU/hqdefault.jpg" alt="Summangala ji">
+                    <div class="video-inline-play">
+                      <svg viewBox="0 0 24 24" width="22" height="22">
+                        <circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.7)" />
+                        <polygon points="10,7 17,12 10,17" fill="white" />
+                      </svg>
+                    </div>
+                  </div>
                   <span class="media-preview__copy">
                     <span class="media-preview__eyebrow">Watch story</span>
-                    <span class="media-preview__title">DR. Paras</span>
-                    <span class="media-preview__meta">Transformation story</span>
+                    <span class="media-preview__title">Summangala ji</span>
+                    <span class="media-preview__meta">Meditation benefit</span>
                   </span>
-                  <span class="media-preview__cta">Open</span>
+                  <span class="media-preview__cta">Play</span>
                 </span>
-              </a>
+              </div>
             </div>
             <div class="video-info">
-              <h4><a href="https://youtu.be/3uRj5R1ekw4?si=5CKomlreVvjuWsLL" target="_blank" rel="noreferrer">Inspiring Feedback : DR. Paras</a></h4>
-              <p class="video-duration">Watch on YouTube</p>
+              <h4><a href="https://youtu.be/Q3BKJpUKIUU" target="_blank" rel="noreferrer">कैसे दो-तीन घंटे की नींद
+                  पर्याप्त हो जाती है ध्यान के द्वारा - सुमंगला जी का अनुभव</a></h4>
+              <p class="video-duration">Click to play — inline</p>
             </div>
           </div>
+
         </div>
 
         <!-- Your Guide -->
@@ -513,51 +523,16 @@
           </div>
         </div>
 
-        <!-- Program Levels -->
-        <div class="section-header" style="margin-top: 3rem;">
-          <h2 class="font-display">The Program - 3 Levels of Mastery</h2>
-          <p class="section-subtitle">Choose your level of depth and continuity</p>
-        </div>
-        <div class="programs-grid">
-          <div class="program-card" onclick="window.open('https://forms.gle/qwGXxgUzmhL26No37', '_blank')"
-            style="cursor: pointer;">
-            <div class="program-level">1</div>
-            <h3 class="program-title">RISHI <span class="devanagari">ऋष</span></h3>
-            <p class="program-duration">2 HOURS — 1 DAY</p>
-            <p class="program-cost">₹51 (Donation/योगदान)</p>
-            <p>Entry-level mastery to understand the 4-R framework.</p>
-          </div>
-          <div class="program-card" onclick="window.open('https://forms.gle/qwGXxgUzmhL26No37', '_blank')"
-            style="cursor: pointer;">
-            <div class="program-level">2</div>
-            <h3 class="program-title">MUNI <span class="devanagari">मुन</span></h3>
-            <p class="program-duration">6 DAYS — EACH DAY 2 HOURS</p>
-            <p class="program-cost">₹51 (Donation/योगदान)</p>
-            <p>Intermediate mastery with practical application.</p>
-          </div>
-          <div class="program-card featured" onclick="window.open('https://forms.gle/qwGXxgUzmhL26No37', '_blank')"
-            style="cursor: pointer;">
-            <div class="program-level">3</div>
-            <h3 class="program-title">YOGI <span class="devanagari">योगी</span></h3>
-            <p class="program-duration">LIFETIME — EACH DAY 1 HOUR</p>
-            <p class="program-cost">₹51 (Donation/योगदान)</p>
-            <p>Advanced mastery for continuous growth and support.</p>
-            <div class="featured-badge">Most Popular</div>
-          </div>
-        </div>
-
       </div>
     </div>
   </div>
 
   <!-- ═══════════════════════════════════════ -->
-  <!-- SEEKERS MODAL -->
+  <!-- SEEKERS CONTENT (inline toggle) -->
   <!-- ═══════════════════════════════════════ -->
-  <div id="seekersModal" class="modal">
-    <div class="modal-content">
-      <button class="modal-close seekers-modal-close">&times;</button>
-
-      <div class="modal-scroll">
+  <div id="seekersContent" class="toggle-content">
+    <div class="container">
+      <div class="toggle-content__card">
         <div class="session-banner seekers-banner" style="margin-bottom: 2rem;">
           <div class="banner-icon">🌿</div>
           <div class="banner-text">
@@ -569,11 +544,14 @@
 
         <!-- Non-Corporate Promise -->
         <div class="corporate-promise">
-          <div class="promise-grid" style="grid-template-columns: 1fr 1fr; background: transparent; border: none; padding: 0 0 0.5rem; margin-bottom: 0.5rem;">
-            <div style="text-align: center; font-size: 1.3rem; font-weight: 700; color: var(--p600); padding: 0.5rem 1rem;">
+          <div class="promise-grid"
+            style="grid-template-columns: 1fr 1fr; background: transparent; border: none; padding: 0 0 0.5rem; margin-bottom: 0.5rem;">
+            <div
+              style="text-align: center; font-size: 1.3rem; font-weight: 700; color: var(--p600); padding: 0.5rem 1rem;">
               Do you feel this?
             </div>
-            <div style="text-align: center; font-size: 1.3rem; font-weight: 700; color: var(--p600); padding: 0.5rem 1rem; border-left: 2px solid var(--p300);">
+            <div
+              style="text-align: center; font-size: 1.3rem; font-weight: 700; color: var(--p600); padding: 0.5rem 1rem; border-left: 2px solid var(--p300);">
               अब समाधान है...
             </div>
           </div>
@@ -606,7 +584,8 @@
 
         <!-- 4-R Framework -->
         <div class="section-header">
-          <p class="section-subtitle" style="font-size: 1.6rem; font-weight: 700; color: var(--p700);">4-R लाइफ फॉर्मूला</p>
+          <p class="section-subtitle" style="font-size: 1.6rem; font-weight: 700; color: var(--p700);">4-R लाइफ फॉर्मूला
+          </p>
         </div>
 
         <div class="four-r-framework">
@@ -638,7 +617,8 @@
 
         <!-- Spiritual Clarity -->
         <div class="section-header">
-          <p style="font-size: 1.4rem; font-weight: 600; color: var(--ink2); line-height: 1.5;">Cultivate equanimity (समता) as the foundation of every decision and relationship</p>
+          <p style="font-size: 1.4rem; font-weight: 600; color: var(--ink2); line-height: 1.5;">Cultivate equanimity
+            (समता) as the foundation of every decision and relationship</p>
         </div>
 
         <div class="corporate-grid">
@@ -668,7 +648,7 @@
           <div class="card seekers-card">
             <div class="card-icon">💫</div>
             <h3>The Master Key: अनेकान्त</h3>
-             <p>Include on formal life Open mindedness with multiple perspectives - the root of all harmony</p>
+            <p>Include on formal life Open mindedness with multiple perspectives - the root of all harmony</p>
           </div>
           <div class="card seekers-card">
             <div class="card-icon">🤝</div>
@@ -680,7 +660,9 @@
         <!-- Improved Relations & Respect -->
         <div class="section-header" style="margin-top: 3rem;">
           <h2 class="font-display">IMPROVED RELATIONS & RESPECT</h2>
-          <p class="section-subtitle">एक ही सूत्र: समभाव, संवाद, अनेकान्त से</p>
+          <p class="section-subtitle">समभाव, सम्वाद से ! सम्वाद, "अनेकान्त" से ! "अनेकान्त" ही मूल है, बाकी सब भूल है !
+          </p>
+          <h3 style="text-align: center;">One life formula</h3>
         </div>
 
         <div class="corporate-grid">
@@ -705,152 +687,13 @@
         <div class="testimonials-grid">
           <div class="video-card">
             <div class="video-qr">
-              <a class="media-preview-link media-preview-link--client" href="https://youtu.be/3uRj5R1ekw4?si=5CKomlreVvjuWsLL" target="_blank" rel="noreferrer" aria-label="Open Inspiring Feedback : DR. Paras">
+              <a class="media-preview-link media-preview-link--client"
+                href="https://youtu.be/Q3BKJpUKIUU?si=PnteVCLyz7wdguwe" target="_blank" rel="noreferrer"
+                aria-label="Open कैसे दो-तीन घंटे की नींद पर्याप्त हो जाती है ध्यान के द्वारा - सुमंगला जी का अनुभव">
                 <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img src="https://i.ytimg.com/vi/3uRj5R1ekw4/hqdefault.jpg" alt="Inspiring Feedback : DR. Paras"></div>
-                  <span class="media-preview__cta">Open</span>
-                </span>
-              </a>
-            </div>
-          </div>
-          <div class="video-card">
-            <div class="video-qr">
-              <a class="media-preview-link media-preview-link--violet" href="https://youtu.be/mXcT8yJOoNE?si=I__cvzX0b3aSYcKc" target="_blank" rel="noreferrer" aria-label="Open POWER OF JAINISM">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img src="https://i.ytimg.com/vi/mXcT8yJOoNE/hqdefault.jpg" alt="POWER OF JAINISM"></div>
-                  <span class="media-preview__cta">Open</span>
-                </span>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Testimonial Videos -->
-        <!-- <div class="section-header" style="margin-top: 3rem;">
-          <h2 class="font-display">TESTIMONIAL VIDEOS</h2>
-          <p class="section-subtitle">Watch inspiring stories and feedback</p>
-        </div> -->
-
-        <div class="videos-grid">
-          <div class="video-card">
-            <div class="video-qr">
-              <a class="media-preview-link media-preview-link--founder" href="https://youtu.be/VXq3mJDDGtQ?si=rqDVBf106LUrgjol" target="_blank" rel="noreferrer" aria-label="Open Inspiring Feedback by MR Bhavin Soni and many other Corporates.">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img src="https://i.ytimg.com/vi/VXq3mJDDGtQ/hqdefault.jpg" alt="Inspiring Feedback by MR Bhavin Soni and many other Corporates."></div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch story</span>
-                    <span class="media-preview__title">Bhavin Soni feedback</span>
-                    <span class="media-preview__meta">Corporate experience</span>
-                  </span>
-                  <span class="media-preview__cta">Open</span>
-                </span>
-              </a>
-            </div>
-            <div class="video-info">
-              <h4><a href="https://youtu.be/VXq3mJDDGtQ?si=rqDVBf106LUrgjol" target="_blank" rel="noreferrer">Inspiring Feedback by MR Bhavin Soni and many other Corporates.</a></h4>
-              <p class="video-duration">Watch on YouTube</p>
-            </div>
-          </div>
-          <div class="video-card">
-            <div class="video-qr">
-              <a class="media-preview-link media-preview-link--client" href="https://youtu.be/3uRj5R1ekw4?si=qY5UAp757cWury2g" target="_blank" rel="noreferrer" aria-label="Open Inspiring Feedback : DR. Paras">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img src="https://i.ytimg.com/vi/3uRj5R1ekw4/hqdefault.jpg" alt="Inspiring Feedback : DR. Paras"></div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch story</span>
-                    <span class="media-preview__title">Dr. Paras feedback</span>
-                    <span class="media-preview__meta">Transformation story</span>
-                  </span>
-                  <span class="media-preview__cta">Open</span>
-                </span>
-              </a>
-            </div>
-            <div class="video-info">
-              <h4><a href="https://youtu.be/3uRj5R1ekw4?si=qY5UAp757cWury2g" target="_blank" rel="noreferrer">Inspiring Feedback : DR. Paras</a></h4>
-              <p class="video-duration">Watch on YouTube</p>
-            </div>
-          </div>
-          <div class="video-card">
-            <div class="video-qr">
-              <a class="media-preview-link media-preview-link--teal" href="https://youtu.be/PCKIYiHQoio?si=Vx06wOu_TdR9Iy3Q" target="_blank" rel="noreferrer" aria-label="Open Transforming Feedback">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img src="https://i.ytimg.com/vi/PCKIYiHQoio/hqdefault.jpg" alt="Transforming Feedback"></div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch story</span>
-                    <span class="media-preview__title">Transforming feedback</span>
-                    <span class="media-preview__meta">Testimonial clip</span>
-                  </span>
-                  <span class="media-preview__cta">Open</span>
-                </span>
-              </a>
-            </div>
-            <div class="video-info">
-              <h4><a href="https://youtu.be/PCKIYiHQoio?si=Vx06wOu_TdR9Iy3Q" target="_blank" rel="noreferrer">Transforming Feedback</a></h4>
-              <p class="video-duration">Watch on YouTube</p>
-            </div>
-          </div>
-          <div class="video-card">
-            <div class="video-qr">
-              <a class="media-preview-link media-preview-link--violet" href="https://youtu.be/mXcT8yJOoNE?si=VIvqYwNdfnfPpqBJ" target="_blank" rel="noreferrer" aria-label="Open POWER OF JAINISM">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img src="https://i.ytimg.com/vi/mXcT8yJOoNE/hqdefault.jpg" alt="POWER OF JAINISM"></div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch story</span>
-                    <span class="media-preview__title">Power of Jainism</span>
-                    <span class="media-preview__meta">Wisdom feedback</span>
-                  </span>
-                  <span class="media-preview__cta">Open</span>
-                </span>
-              </a>
-            </div>
-            <div class="video-info">
-              <h4><a href="https://youtu.be/mXcT8yJOoNE?si=VIvqYwNdfnfPpqBJ" target="_blank" rel="noreferrer">POWER OF JAINISM</a></h4>
-              <p class="video-duration">Watch on YouTube</p>
-            </div>
-          </div>
-          <div class="video-card">
-            <div class="video-qr">
-              <a class="media-preview-link media-preview-link--gold" href="https://youtu.be/2qO2eGGOSGs?si=i5jW6vmNBbrWxj22" target="_blank" rel="noreferrer" aria-label="Open Power Of Jainism">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img src="https://i.ytimg.com/vi/2qO2eGGOSGs/hqdefault.jpg" alt="Power Of Jainism"></div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch story</span>
-                    <span class="media-preview__title">Jainism power</span>
-                    <span class="media-preview__meta">Inner clarity</span>
-                  </span>
-                  <span class="media-preview__cta">Open</span>
-                </span>
-              </a>
-            </div>
-            <div class="video-info">
-              <h4><a href="https://youtu.be/2qO2eGGOSGs?si=i5jW6vmNBbrWxj22" target="_blank" rel="noreferrer">Power Of Jainism</a></h4>
-              <p class="video-duration">Watch on YouTube</p>
-            </div>
-          </div>
-          <div class="video-card">
-            <div class="video-qr">
-              <a class="media-preview-link media-preview-link--rose" href="https://youtu.be/m81jrhRbXGc?si=UaLJkLI1upiJHnDc" target="_blank" rel="noreferrer" aria-label="Open Inspiring Feedback by Khushboo">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img src="https://i.ytimg.com/vi/m81jrhRbXGc/hqdefault.jpg" alt="Inspiring Feedback by Khushboo"></div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch story</span>
-                    <span class="media-preview__title">Khushboo feedback</span>
-                    <span class="media-preview__meta">Testimonial clip</span>
-                  </span>
-                  <span class="media-preview__cta">Open</span>
-                </span>
-              </a>
-            </div>
-            <div class="video-info">
-              <h4><a href="https://youtu.be/m81jrhRbXGc?si=UaLJkLI1upiJHnDc" target="_blank" rel="noreferrer">Inspiring Feedback by Khushboo</a></h4>
-              <p class="video-duration">Watch on YouTube</p>
-            </div>
-          </div>
-          <div class="video-card">
-            <div class="video-qr">
-              <a class="media-preview-link media-preview-link--client" href="https://youtu.be/Q3BKJpUKIUU?si=PnteVCLyz7wdguwe" target="_blank" rel="noreferrer" aria-label="Open कैसे दो-तीन घंटे की नींद पर्याप्त हो जाती है ध्यान के द्वारा - सुमंगला जी का अनुभव">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img src="https://i.ytimg.com/vi/Q3BKJpUKIUU/hqdefault.jpg" alt="कैसे दो-तीन घंटे की नींद पर्याप्त हो जाती है ध्यान के द्वारा - सुमंगला जी का अनुभव"></div>
+                  <div class="media-preview__portrait media-preview__portrait--img"><img
+                      src="https://i.ytimg.com/vi/Q3BKJpUKIUU/hqdefault.jpg"
+                      alt="कैसे दो-तीन घंटे की नींद पर्याप्त हो जाती है ध्यान के द्वारा - सुमंगला जी का अनुभव"></div>
                   <span class="media-preview__copy">
                     <span class="media-preview__eyebrow">Watch story</span>
                     <span class="media-preview__title">Summangala ji experience</span>
@@ -861,91 +704,20 @@
               </a>
             </div>
             <div class="video-info">
-              <h4><a href="https://youtu.be/Q3BKJpUKIUU?si=PnteVCLyz7wdguwe" target="_blank" rel="noreferrer">कैसे दो-तीन घंटे की नींद पर्याप्त हो जाती है ध्यान के द्वारा - सुमंगला जी का अनुभव</a></h4>
+              <h4><a href="https://youtu.be/Q3BKJpUKIUU?si=PnteVCLyz7wdguwe" target="_blank" rel="noreferrer">कैसे
+                  दो-तीन घंटे की नींद पर्याप्त हो जाती है ध्यान के द्वारा - सुमंगला जी का अनुभव</a></h4>
               <p class="video-duration">Watch on YouTube</p>
             </div>
           </div>
           <div class="video-card">
             <div class="video-qr">
-              <a class="media-preview-link media-preview-link--founder" href="https://youtu.be/_it71PJ2SAA?si=KvwYlDJKbC_CXIMJ" target="_blank" rel="noreferrer" aria-label="Open दो Session में ही जीनवाणी से जीवन दृष्टि परिवर्तन का अनुभव - किरण राजेन्द्र जी डाँगी के द्वारा">
+              <a class="media-preview-link media-preview-link--client"
+                href="https://youtu.be/g9i-kUSVjW0?si=zui8tAbJHtcWMKE0" target="_blank" rel="noreferrer"
+                aria-label="Open Transformed Life Feedback-Achieving Endless Happiness by Mr. Mayur (CA)">
                 <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img src="https://i.ytimg.com/vi/_it71PJ2SAA/hqdefault.jpg" alt="दो Session में ही जीनवाणी से जीवन दृष्टि परिवर्तन का अनुभव - किरण राजेन्द्र जी डाँगी के द्वारा"></div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch story</span>
-                    <span class="media-preview__title">Kiran Rajendra ji experience</span>
-                    <span class="media-preview__meta">Life vision shift</span>
-                  </span>
-                  <span class="media-preview__cta">Open</span>
-                </span>
-              </a>
-            </div>
-            <div class="video-info">
-              <h4><a href="https://youtu.be/_it71PJ2SAA?si=KvwYlDJKbC_CXIMJ" target="_blank" rel="noreferrer">दो Session में ही जीनवाणी से जीवन दृष्टि परिवर्तन का अनुभव - किरण राजेन्द्र जी डाँगी के द्वारा</a></h4>
-              <p class="video-duration">Watch on YouTube</p>
-            </div>
-          </div>
-          <div class="video-card">
-            <div class="video-qr">
-              <a class="media-preview-link media-preview-link--teal" href="https://youtu.be/ej9gwnoxRbU?si=Zg6_lvjcdZoCt7QU" target="_blank" rel="noreferrer" aria-label="Open खुली आँखों से कैसे ध्यान होता है? खुशबु जी अपना अनुभव साझा करते हुए|">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img src="https://i.ytimg.com/vi/ej9gwnoxRbU/hqdefault.jpg" alt="खुली आँखों से कैसे ध्यान होता है? खुशबु जी अपना अनुभव साझा करते हुए|"></div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch story</span>
-                    <span class="media-preview__title">Khushbu ji experience</span>
-                    <span class="media-preview__meta">Open-eyes meditation</span>
-                  </span>
-                  <span class="media-preview__cta">Open</span>
-                </span>
-              </a>
-            </div>
-            <div class="video-info">
-              <h4><a href="https://youtu.be/ej9gwnoxRbU?si=Zg6_lvjcdZoCt7QU" target="_blank" rel="noreferrer">खुली आँखों से कैसे ध्यान होता है?  खुशबु जी अपना अनुभव साझा करते हुए|</a></h4>
-              <p class="video-duration">Watch on YouTube</p>
-            </div>
-          </div>
-          <div class="video-card">
-            <div class="video-qr">
-              <a class="media-preview-link media-preview-link--gold" href="https://youtu.be/yOhsCuaTmtM?si=pW-bDl4k13SSo5UK" target="_blank" rel="noreferrer" aria-label="Open Endless Happiness Experience Feedback by Dr. Paras Suriya & Mr. Chandmal Ji Bhalawat">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img src="https://i.ytimg.com/vi/yOhsCuaTmtM/hqdefault.jpg" alt="Endless Happiness Experience Feedback by Dr. Paras Suriya & Mr. Chandmal Ji Bhalawat"></div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch story</span>
-                    <span class="media-preview__title">Endless happiness feedback</span>
-                    <span class="media-preview__meta">Shared experience</span>
-                  </span>
-                  <span class="media-preview__cta">Open</span>
-                </span>
-              </a>
-            </div>
-            <div class="video-info">
-              <h4><a href="https://youtu.be/yOhsCuaTmtM?si=pW-bDl4k13SSo5UK" target="_blank" rel="noreferrer">Endless Happiness Experience Feedback by Dr. Paras Suriya &amp; Mr. Chandmal Ji Bhalawat</a></h4>
-              <p class="video-duration">Watch on YouTube</p>
-            </div>
-          </div>
-          <div class="video-card">
-            <div class="video-qr">
-              <a class="media-preview-link media-preview-link--rose" href="https://youtu.be/z_GmSxp-A7w?si=mOP-hLiVX-Sstc01" target="_blank" rel="noreferrer" aria-label="Open 24-hour Smile-Endless Happiness Feedback in Just 15 Days of Jainvani (Winner Vani)">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img src="https://i.ytimg.com/vi/z_GmSxp-A7w/hqdefault.jpg" alt="24-hour Smile-Endless Happiness Feedback in Just 15 Days of Jainvani (Winner Vani)"></div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch story</span>
-                    <span class="media-preview__title">Winner Vani feedback</span>
-                    <span class="media-preview__meta">15-day result</span>
-                  </span>
-                  <span class="media-preview__cta">Open</span>
-                </span>
-              </a>
-            </div>
-            <div class="video-info">
-              <h4><a href="https://youtu.be/z_GmSxp-A7w?si=mOP-hLiVX-Sstc01" target="_blank" rel="noreferrer">24-hour Smile-Endless Happiness Feedback in Just 15 Days of Jainvani (Winner Vani)</a></h4>
-              <p class="video-duration">Watch on YouTube</p>
-            </div>
-          </div>
-          <div class="video-card">
-            <div class="video-qr">
-              <a class="media-preview-link media-preview-link--client" href="https://youtu.be/g9i-kUSVjW0?si=zui8tAbJHtcWMKE0" target="_blank" rel="noreferrer" aria-label="Open Transformed Life Feedback-Achieving Endless Happiness by Mr. Mayur (CA)">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img src="https://i.ytimg.com/vi/g9i-kUSVjW0/hqdefault.jpg" alt="Transformed Life Feedback-Achieving Endless Happiness by Mr. Mayur (CA)"></div>
+                  <div class="media-preview__portrait media-preview__portrait--img"><img
+                      src="https://i.ytimg.com/vi/g9i-kUSVjW0/hqdefault.jpg"
+                      alt="Transformed Life Feedback-Achieving Endless Happiness by Mr. Mayur (CA)"></div>
                   <span class="media-preview__copy">
                     <span class="media-preview__eyebrow">Watch story</span>
                     <span class="media-preview__title">Mr. Mayur feedback</span>
@@ -956,7 +728,128 @@
               </a>
             </div>
             <div class="video-info">
-              <h4><a href="https://youtu.be/g9i-kUSVjW0?si=zui8tAbJHtcWMKE0" target="_blank" rel="noreferrer">Transformed Life Feedback-Achieving Endless Happiness by Mr. Mayur (CA)</a></h4>
+              <h4><a href="https://youtu.be/g9i-kUSVjW0?si=zui8tAbJHtcWMKE0" target="_blank"
+                  rel="noreferrer">Transformed Life Feedback-Achieving Endless Happiness by Mr. Mayur (CA)</a></h4>
+              <p class="video-duration">Watch on YouTube</p>
+            </div>
+          </div>
+          <div class="video-card">
+            <div class="video-qr">
+              <a class="media-preview-link media-preview-link--violet"
+                href="https://youtu.be/mXcT8yJOoNE?si=I__cvzX0b3aSYcKc" target="_blank" rel="noreferrer"
+                aria-label="Open POWER OF JAINISM">
+                <span class="media-preview">
+                  <div class="media-preview__portrait media-preview__portrait--img"><img
+                      src="https://i.ytimg.com/vi/mXcT8yJOoNE/hqdefault.jpg" alt="POWER OF JAINISM"></div>
+                  <span class="media-preview__copy">
+                    <span class="media-preview__eyebrow">Watch story</span>
+                    <span class="media-preview__title">Power of Jainism</span>
+                    <span class="media-preview__meta">Wisdom feedback</span>
+                  </span>
+                  <span class="media-preview__cta">Open</span>
+                </span>
+              </a>
+            </div>
+            <div class="video-info">
+              <h4><a href="https://youtu.be/mXcT8yJOoNE?si=I__cvzX0b3aSYcKc" target="_blank" rel="noreferrer">POWER OF
+                  JAINISM</a></h4>
+              <p class="video-duration">Watch on YouTube</p>
+            </div>
+          </div>
+
+          <div class="video-card">
+            <div class="video-qr">
+              <a class="media-preview-link media-preview-link--teal"
+                href="https://youtu.be/ej9gwnoxRbU?si=Zg6_lvjcdZoCt7QU" target="_blank" rel="noreferrer"
+                aria-label="Open खुली आँखों से कैसे ध्यान होता है? खुशबु जी अपना अनुभव साझा करते हुए|">
+                <span class="media-preview">
+                  <div class="media-preview__portrait media-preview__portrait--img"><img
+                      src="https://i.ytimg.com/vi/ej9gwnoxRbU/hqdefault.jpg"
+                      alt="खुली आँखों से कैसे ध्यान होता है? खुशबु जी अपना अनुभव साझा करते हुए|"></div>
+                  <span class="media-preview__copy">
+                    <span class="media-preview__eyebrow">Watch story</span>
+                    <span class="media-preview__title">Khushbu ji experience</span>
+                    <span class="media-preview__meta">Open-eyes meditation</span>
+                  </span>
+                  <span class="media-preview__cta">Open</span>
+                </span>
+              </a>
+            </div>
+            <div class="video-info">
+              <h4><a href="https://youtu.be/ej9gwnoxRbU?si=Zg6_lvjcdZoCt7QU" target="_blank" rel="noreferrer">खुली आँखों
+                  से कैसे ध्यान होता है? खुशबु जी अपना अनुभव साझा करते हुए|</a></h4>
+              <p class="video-duration">Watch on YouTube</p>
+            </div>
+          </div>
+          <div class="video-card">
+            <div class="video-qr">
+              <a class="media-preview-link media-preview-link--founder"
+                href="https://youtu.be/_it71PJ2SAA?si=KvwYlDJKbC_CXIMJ" target="_blank" rel="noreferrer"
+                aria-label="Open दो Session में ही जीनवाणी से जीवन दृष्टि परिवर्तन का अनुभव - किरण राजेन्द्र जी डाँगी के द्वारा">
+                <span class="media-preview">
+                  <div class="media-preview__portrait media-preview__portrait--img"><img
+                      src="https://i.ytimg.com/vi/_it71PJ2SAA/hqdefault.jpg"
+                      alt="दो Session में ही जीनवाणी से जीवन दृष्टि परिवर्तन का अनुभव - किरण राजेन्द्र जी डाँगी के द्वारा">
+                  </div>
+                  <span class="media-preview__copy">
+                    <span class="media-preview__eyebrow">Watch story</span>
+                    <span class="media-preview__title">Kiran Rajendra ji experience</span>
+                    <span class="media-preview__meta">Life vision shift</span>
+                  </span>
+                  <span class="media-preview__cta">Open</span>
+                </span>
+              </a>
+            </div>
+            <div class="video-info">
+              <h4><a href="https://youtu.be/_it71PJ2SAA?si=KvwYlDJKbC_CXIMJ" target="_blank" rel="noreferrer">दो Session
+                  में ही जीनवाणी से जीवन दृष्टि परिवर्तन का अनुभव - किरण राजेन्द्र जी डाँगी के द्वारा</a></h4>
+              <p class="video-duration">Watch on YouTube</p>
+            </div>
+          </div>
+          <div class="video-card">
+            <div class="video-qr">
+              <a class="media-preview-link media-preview-link--founder"
+                href="https://youtu.be/VXq3mJDDGtQ?si=rqDVBf106LUrgjol" target="_blank" rel="noreferrer"
+                aria-label="Open Inspiring Feedback by MR Bhavin Soni and many other Corporates.">
+                <span class="media-preview">
+                  <div class="media-preview__portrait media-preview__portrait--img"><img
+                      src="https://i.ytimg.com/vi/VXq3mJDDGtQ/hqdefault.jpg"
+                      alt="Inspiring Feedback by MR Bhavin Soni and many other Corporates."></div>
+                  <span class="media-preview__copy">
+                    <span class="media-preview__eyebrow">Watch story</span>
+                    <span class="media-preview__title">Bhavin Soni feedback</span>
+                    <span class="media-preview__meta">Corporate experience</span>
+                  </span>
+                  <span class="media-preview__cta">Open</span>
+                </span>
+              </a>
+            </div>
+            <div class="video-info">
+              <h4><a href="https://youtu.be/VXq3mJDDGtQ?si=rqDVBf106LUrgjol" target="_blank" rel="noreferrer">Inspiring
+                  Feedback by MR Bhavin Soni and many other Corporates.</a></h4>
+              <p class="video-duration">Watch on YouTube</p>
+            </div>
+          </div>
+          <div class="video-card">
+            <div class="video-qr">
+              <a class="media-preview-link media-preview-link--teal"
+                href="https://youtu.be/PCKIYiHQoio?si=Vx06wOu_TdR9Iy3Q" target="_blank" rel="noreferrer"
+                aria-label="Open Transforming Feedback">
+                <span class="media-preview">
+                  <div class="media-preview__portrait media-preview__portrait--img"><img
+                      src="https://i.ytimg.com/vi/PCKIYiHQoio/hqdefault.jpg" alt="Transforming Feedback"></div>
+                  <span class="media-preview__copy">
+                    <span class="media-preview__eyebrow">Watch story</span>
+                    <span class="media-preview__title">Transforming feedback</span>
+                    <span class="media-preview__meta">Testimonial clip</span>
+                  </span>
+                  <span class="media-preview__cta">Open</span>
+                </span>
+              </a>
+            </div>
+            <div class="video-info">
+              <h4><a href="https://youtu.be/PCKIYiHQoio?si=Vx06wOu_TdR9Iy3Q" target="_blank"
+                  rel="noreferrer">Transforming Feedback</a></h4>
               <p class="video-duration">Watch on YouTube</p>
             </div>
           </div>
@@ -985,38 +878,6 @@
           </div>
         </div>
 
-        <div class="section-header" style="margin-top: 3rem;">
-          <h2 class="font-display">The Program - 3 Levels of Mastery</h2>
-          <p class="section-subtitle">₹51 contribution for the session</p>
-        </div>
-
-        <div class="programs-grid">
-          <div class="program-card" onclick="window.open('https://forms.gle/qwGXxgUzmhL26No37', '_blank')"
-            style="cursor: pointer;">
-            <div class="program-level">1</div>
-            <h3 class="program-title">RISHI <span class="devanagari">ऋष</span></h3>
-            <p class="program-duration">2 HOURS — 1 DAY</p>
-            <p class="program-cost">₹51 (Donation/योगदान)</p>
-            <p>Basic level entry into the 4-R framework and spiritual clarity.</p>
-          </div>
-          <div class="program-card" onclick="window.open('https://forms.gle/qwGXxgUzmhL26No37', '_blank')"
-            style="cursor: pointer;">
-            <div class="program-level">2</div>
-            <h3 class="program-title">MUNI <span class="devanagari">मुन</span></h3>
-            <p class="program-duration">6 DAYS — EACH DAY 2 HOURS</p>
-            <p class="program-cost">₹51 (Donation/योगदान)</p>
-            <p>Intermediate level for deeper practice and real-life application.</p>
-          </div>
-          <div class="program-card featured" onclick="window.open('https://forms.gle/qwGXxgUzmhL26No37', '_blank')"
-            style="cursor: pointer;">
-            <div class="program-level">3</div>
-            <h3 class="program-title">YOGI <span class="devanagari">योगी</span></h3>
-            <p class="program-duration">LIFETIME — EACH DAY 1 HOUR</p>
-            <p class="program-cost">₹51 (Donation/योगदान)</p>
-            <p>Advanced level for lifetime growth, meditation, and support.</p>
-            <div class="featured-badge">Most Popular</div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -1046,20 +907,26 @@
             </ul>
           </div>
 
-          <p><strong>Philosophy:</strong> "Peaceful Profit Monk" - achieving business excellence while maintaining inner
+          <p><strong>Philosophy:</strong> "Peaceful Profit Monk" (ध्यान धन साधक) - achieving business excellence while
+            maintaining inner
             peace and spiritual clarity.</p>
         </div>
         <div class="about-stats">
-          <div class="stat">
-            <div class="stat-number">300+</div>
+          <div class="stat stat--count" data-target="300" data-suffix="+">
+            <div class="stat-number"><span class="stat-num">0</span><span class="stat-suffix">+</span></div>
             <div class="stat-label">Clients Transformed</div>
           </div>
-          <div class="stat">
-            <div class="stat-number">30+</div>
+          <div class="stat stat--count" data-target="30" data-suffix="+">
+            <div class="stat-number"><span class="stat-num">0</span><span class="stat-suffix">+</span></div>
             <div class="stat-label">Years Experience</div>
           </div>
-          <div class="stat">
-            <div class="stat-number">2X</div>
+          <div class="stat stat--multiplier" data-target="2">
+            <div class="stat-number">
+              <span class="stat-multiplier-progress">
+                <span class="stat-multiplier-fill"></span>
+              </span>
+              <span class="stat-multiplier-text"><span class="stat-num">0</span>X</span>
+            </div>
             <div class="stat-label">Profit & Peace</div>
           </div>
         </div>
@@ -1068,23 +935,94 @@
       <div class="testimonials-section">
         <h3 class="font-display">Testimonials</h3>
         <div class="testimonials-grid">
-          <div class="testimonial">
-            <p>"Peaceful Profit Monk is not just a name - it's a reality. Double Profit results with Spirituality for
-              Corporates."</p>
-            <div class="testimonial-author">— Bhavin Soni</div>
+          <div class="video-card video-card--inline" data-video-id="f13nS_iPhjQ">
+            <div class="video-qr">
+              <div class="video-inline-thumb" role="button" tabindex="0"
+                aria-label="Play Bhavin Soni testimonial video">
+                <span class="media-preview">
+                  <div class="media-preview__portrait media-preview__portrait--img">
+                    <img src="https://img.youtube.com/vi/f13nS_iPhjQ/hqdefault.jpg" alt="Bhavin Soni testimonial video">
+                    <div class="video-inline-play">
+                      <svg viewBox="0 0 24 24" width="22" height="22">
+                        <circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.7)" />
+                        <polygon points="10,7 17,12 10,17" fill="white" />
+                      </svg>
+                    </div>
+                  </div>
+                  <span class="media-preview__copy">
+                    <span class="media-preview__eyebrow">Watch story</span>
+                    <span class="media-preview__title">Bhavin Soni</span>
+                    <span class="media-preview__meta">Corporate feedback</span>
+                  </span>
+                  <span class="media-preview__cta">Play</span>
+                </span>
+              </div>
+            </div>
+            <div class="video-info">
+              <h4>Bhavin Soni feedback</h4>
+              <p class="video-duration">Click to play — inline</p>
+            </div>
           </div>
-          <div class="testimonial">
-            <p>"From Highly low Mental state (भखारी) to infinite joy (राजा) - a complete life transformation in just few
-              weeks. Currently pursuing Advanced Lifetime Yogi Program."</p>
-            <div class="testimonial-author">— DR. PARAS (MD, Medicine)</div>
+          <div class="video-card video-card--inline" data-video-id="3uRj5R1ekw4">
+            <div class="video-qr">
+              <div class="video-inline-thumb" role="button" tabindex="0"
+                aria-label="Play life transformation testimonial video">
+                <span class="media-preview">
+                  <div class="media-preview__portrait media-preview__portrait--img">
+                    <img src="https://img.youtube.com/vi/3uRj5R1ekw4/hqdefault.jpg"
+                      alt="Life transformation testimonial video">
+                    <div class="video-inline-play">
+                      <svg viewBox="0 0 24 24" width="22" height="22">
+                        <circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.7)" />
+                        <polygon points="10,7 17,12 10,17" fill="white" />
+                      </svg>
+                    </div>
+                  </div>
+                  <span class="media-preview__copy">
+                    <span class="media-preview__eyebrow">Watch story</span>
+                    <span class="media-preview__title">Life transformation</span>
+                    <span class="media-preview__meta">Mindset shift</span>
+                  </span>
+                  <span class="media-preview__cta">Play</span>
+                </span>
+              </div>
+            </div>
+            <div class="video-info">
+              <h4>Transformation feedback</h4>
+              <p class="video-duration">Click to play — inline</p>
+            </div>
           </div>
-          <div class="testimonial">
-            <p>"Such simple clarity I have never found anywhere else in any Philosophy. Truly life-changing."</p>
-            <div class="testimonial-author">— Mukesh Choradia</div>
+          <div class="video-card video-card--inline" data-video-id="mXcT8yJOoNE">
+            <div class="video-qr">
+              <div class="video-inline-thumb" role="button" tabindex="0"
+                aria-label="Play Power of Jainism testimonial video">
+                <span class="media-preview">
+                  <div class="media-preview__portrait media-preview__portrait--img">
+                    <img src="https://img.youtube.com/vi/mXcT8yJOoNE/hqdefault.jpg"
+                      alt="Power of Jainism testimonial video">
+                    <div class="video-inline-play">
+                      <svg viewBox="0 0 24 24" width="22" height="22">
+                        <circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.7)" />
+                        <polygon points="10,7 17,12 10,17" fill="white" />
+                      </svg>
+                    </div>
+                  </div>
+                  <span class="media-preview__copy">
+                    <span class="media-preview__eyebrow">Watch story</span>
+                    <span class="media-preview__title">Power of Jainism</span>
+                    <span class="media-preview__meta">Wisdom feedback</span>
+                  </span>
+                  <span class="media-preview__cta">Play</span>
+                </span>
+              </div>
+            </div>
+            <div class="video-info">
+              <h4>Power of Jainism</h4>
+              <p class="video-duration">Click to play — inline</p>
+            </div>
           </div>
         </div>
       </div>
-    </div>
   </section>
 
   <!-- ═══════════════════════════════════════ -->
@@ -1127,18 +1065,22 @@
         </div>
       </div>
 
-      <div style="max-width: 500px; margin: 2rem auto; background: white; border-left: 4px solid #4a1f94; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+      <div
+        style="max-width: 500px; margin: 2rem auto; background: white; border-left: 4px solid #4a1f94; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
         <h3 style="text-align: center; margin: 0 0 1.5rem; color: #160a2e;">Payment & Registration</h3>
 
-        <div style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid #e5e7eb; color: #374151;">
+        <div
+          style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid #e5e7eb; color: #374151;">
           <span style="font-weight: 600;">Contribution</span>
           <span>₹51 (Donation)</span>
         </div>
-        <div style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid #e5e7eb; color: #374151;">
+        <div
+          style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid #e5e7eb; color: #374151;">
           <span style="font-weight: 600;">Programs</span>
           <span>ध्यान भी ध्यान भी Entry मास्टरक्लास</span>
         </div>
-        <div style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: none; color: #374151;">
+        <div
+          style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: none; color: #374151;">
           <span style="font-weight: 600;">Mode</span>
           <span>Online</span>
         </div>
@@ -1159,94 +1101,23 @@
   <footer class="footer">
     <div class="container">
       <p>&copy; 2026 M.L. Suriya. All rights reserved.</p>
-      <div class="social-links">
-        <a href="#">Twitter</a>
-        <a href="#">Instagram</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">YouTube</a>
-      </div>
+    </div>
     </div>
   </footer>
 
-<script>
-// Scroll to top on page load
-window.scrollTo(0, 0);
-if (window.location.hash) {
-  history.replaceState(null, null, ' ');
-}
-
-// Modal scroll-to-top
-document.addEventListener('click', function(e) {
-  const corporateModal = document.getElementById('corporateModal');
-  const seekersModal = document.getElementById('seekersModal');
-
-  // Corporate modal button
-  if (e.target.closest('#corporateBtn')) {
-    setTimeout(function() {
-      const el = corporateModal && corporateModal.querySelector('.modal-scroll');
-      if (el) el.scrollTop = 0;
-    }, 50);
-  }
-
-  // Seekers modal button
-  if (e.target.closest('#seekersBtn')) {
-    setTimeout(function() {
-      const el = seekersModal && seekersModal.querySelector('.modal-scroll');
-      if (el) el.scrollTop = 0;
-    }, 50);
-  }
-});
-</script>
-
-<script>
-// INLINE YOUTUBE EMBED — Replace thumbnail with player on click
-(function() {
-  function extractId(url) {
-    var m = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([a-zA-Z0-9_-]{11})/) ||
-            url.match(/youtube\.com\/shorts\/([a-zA-Z0-9_-]{11})/);
-    return m ? m[1] : null;
-  }
-
-  function embedCard(card, videoId) {
-    var qr = card.querySelector('.video-qr');
-    if (!qr || qr.getAttribute('data-embedded')) return;
-    qr.setAttribute('data-embedded', 'true');
-    qr.style.cssText = 'display:block;padding:0;min-height:0;width:100%';
-    var wrapper = document.createElement('div');
-    wrapper.style.cssText = 'position:relative;width:100%;padding-bottom:56.25%;background:#000';
-    var iframe = document.createElement('iframe');
-    iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
-    iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-    iframe.allowFullscreen = true;
-    iframe.style.cssText = 'position:absolute;top:0;left:0;width:100%;height:100%;border:0';
-    wrapper.appendChild(iframe);
-    qr.appendChild(wrapper);
-  }
-
-  // Disable all YouTube links inside video cards and attach direct click handlers
-  var links = document.querySelectorAll('.video-card a[href*="youtube.com/watch"], .video-card a[href*="youtu.be/"], .video-card a[href*="youtube.com/shorts"]');
-  for (var i = 0; i < links.length; i++) {
-    (function(link) {
-      var href = link.getAttribute('href');
-      if (!href) return;
-      var videoId = extractId(href);
-      if (!videoId) return;
-
-      // Remove navigation completely
-      link.removeAttribute('href');
-      link.removeAttribute('target');
-      link.style.cursor = 'pointer';
-
-      // Direct click handler
-      link.addEventListener('click', function(e) {
-        e.preventDefault();
-        var card = this.closest('.video-card');
-        if (card) embedCard(card, videoId);
-      });
-    })(links[i]);
-  }
-})();
-</script>
+  <!-- ═══════════════════════════════════════ -->
+  <!-- VIDEO MODAL -->
+  <!-- ═══════════════════════════════════════ -->
+  <div id="videoModal" class="video-modal">
+    <div class="video-modal-content">
+      <span class="video-modal-close">&times;</span>
+      <div class="video-modal-iframe-container">
+        <iframe id="videoModalIframe" src="" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
 
 </body>
 
