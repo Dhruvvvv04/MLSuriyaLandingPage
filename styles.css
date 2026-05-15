@@ -176,6 +176,29 @@ body {
   color: var(--p600)
 }
 
+.nav-contact {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav-contact-link {
+  color: var(--ink2);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  background: rgba(107, 53, 200, 0.05);
+}
+
+.nav-contact-link:hover {
+  color: var(--p600);
+  background: rgba(107, 53, 200, 0.1);
+  transform: translateY(-1px);
+}
+
 .hero {
   position: relative;
   min-height: 100vh;
@@ -1628,6 +1651,74 @@ body {
   align-items: center;
   flex-wrap: wrap;
   gap: 2rem
+}
+
+.contact-footer {
+  padding: 5rem 0;
+  background: linear-gradient(180deg, transparent, rgba(107, 53, 200, 0.05));
+  text-align: center;
+}
+
+.contact-footer-grid {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-top: 3rem;
+}
+
+.footer-contact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: var(--ink);
+  transition: all 0.3s ease;
+}
+
+.footer-contact-item:hover {
+  transform: translateY(-8px);
+}
+
+.footer-contact-icon {
+  font-size: 2.8rem;
+  margin-bottom: 1.2rem;
+  background: white;
+  width: 90px;
+  height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 15px 35px rgba(107, 53, 200, 0.12);
+  border: 1px solid var(--p200);
+  transition: all 0.3s ease;
+}
+
+.footer-contact-item:hover .footer-contact-icon {
+  border-color: var(--p600);
+  box-shadow: 0 20px 45px rgba(107, 53, 200, 0.2);
+}
+
+.footer-contact-label {
+  font-weight: 700;
+  color: var(--p600);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.footer-contact-value {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+@media (max-width: 768px) {
+  .contact-footer-grid {
+    flex-direction: column;
+    gap: 3rem;
+  }
 }
 
 .social-links {
@@ -3290,6 +3381,19 @@ html {
     gap: 1rem;
     flex-wrap: wrap;
     justify-content: center;
+  }
+
+  .nav-contact {
+    gap: 0.8rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .nav-contact-link {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.6rem;
   }
 
   /* Hero */
