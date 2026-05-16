@@ -13,9 +13,7 @@
 
 <body>
 
-  <!-- ═══════════════════════════════════════ -->
-  <!-- NAVIGATION -->
-  <!-- ═══════════════════════════════════════ -->
+  <!-- 1. NAVBAR (KEEP) -->
   <nav class="navbar">
     <div class="container">
       <div class="nav-brand">M.L. Suriya</div>
@@ -31,9 +29,7 @@
     </div>
   </nav>
 
-  <!-- ═══════════════════════════════════════ -->
-  <!-- HERO SECTION -->
-  <!-- ═══════════════════════════════════════ -->
+  <!-- 2. HERO SECTION & HERO VIDEO (KEEP) -->
   <section id="home" class="hero">
     <div class="hero-backdrop hero-backdrop--grid"></div>
     <div class="hero-backdrop hero-backdrop--band"></div>
@@ -54,6 +50,8 @@
         <h1 class="font-display">धन भी ध्यान भी</h1>
         <p class="hero-subtitle">Entry मास्टरक्लास</p>
         <p class="hero-tagline">Where Profit Meets Peace & Lasting Inner Peace</p>
+        
+        <!-- HERO VIDEO (KEEP) -->
         <div class="hero-video" style="max-width: 500px; margin: 2.5rem auto; perspective: 1000px;">
           <div class="video-card video-card--inline" data-video-id="iTjkwU1_SOw"
             style="background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.3);">
@@ -79,12 +77,20 @@
             </div>
           </div>
         </div>
-        <p class="hero-desc">Money and Peace, you can have both. Choose the path that fits you best: non-corporate
-          spiritual growth or corporate spiritual clarity.</p>
-        <p style="font-size: 1.2rem; font-weight: 700; color: var(--p700); margin: 1.5rem 0;">Date : 17th May, 2026
-          Sunday | Mode : Online</p>
-        <p class="hero-meta">Non-Corporate Spiritual Seekers • 8 AM – 10 AM | Corporate Spiritual Seekers • 11 AM – 1 PM
-        </p>
+
+        <p class="hero-desc">Money and Peace, you can have both. Choose the path that fits you best: non-corporate spiritual growth or corporate spiritual clarity.</p>
+
+        <!-- 3. CLASS TIMING BLOCK (KEEP) -->
+        <div class="timing-block" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 1.5rem; border-radius: 12px; border: 1px solid rgba(255,255,255,0.2); margin-top: 2rem;">
+          <p style="font-size: 1.3rem; font-weight: 700; color: var(--p700); margin: 0 0 1rem;">Date: 17th May, 2026 Sunday | Mode: Online</p>
+          <p class="hero-meta" style="font-size: 1.1rem; color: #374151;">
+            <strong>Non-Corporate Spiritual Seekers</strong> • 8 AM – 10 AM<br>
+            <strong>Corporate Spiritual Seekers</strong> • 11 AM – 1 PM
+          </p>
+        </div>
+
+        <!-- COMMENTED OUT PATH SELECTION -->
+        <!-- 
         <p class="hero-select-prompt">Select the path that describes you:</p>
         <div class="hero-cta hero-cta--checkboxes reveal reveal-delay-3">
           <label class="checkbox-card" for="seekersCheck">
@@ -100,1003 +106,69 @@
             <span class="checkbox-card__label">Corporate Spiritual Seekers</span>
           </label>
         </div>
+        -->
       </div>
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════ -->
-  <!-- CORPORATE CONTENT (inline toggle) -->
-  <!-- ═══════════════════════════════════════ -->
-  <div id="corporateContent" class="toggle-content">
+  <!-- COMMENTED OUT CONTENT SECTIONS -->
+  <!-- 
+  <div id="corporateContent" class="toggle-content" style="display: none !important;"> ... </div>
+  <div id="seekersContent" class="toggle-content" style="display: none !important;"> ... </div>
+  -->
+
+  <!-- 4. M.L. SURIYA BIO VIDEO & CREDENTIALS (KEEP) -->
+  <section id="about" class="bio-section" style="padding: 4rem 0; background: #fff;">
     <div class="container">
-      <div class="toggle-content__card">
-        <!-- Session Banner -->
-        <div class="session-banner corporate-banner" style="margin-bottom: 2rem;">
-          <div class="banner-icon">💼</div>
-          <div class="banner-text">
-            <h3>17 May 2026 • Sunday • 11 AM – 1 PM</h3>
-            <p>Corporate Spiritual Seekers Special Session</p>
-            <p>Mode: Online • Link will be shared a day before</p>
-          </div>
-        </div>
-
-        <!-- Corporate Promise -->
-        <div class="corporate-promise">
-          <div class="promise-grid"
-            style="grid-template-columns: 1fr 1fr; background: transparent; border: none; padding: 0 0 0.5rem; margin-bottom: 0.5rem;">
-            <div
-              style="text-align: center; font-size: 1.3rem; font-weight: 700; color: var(--p600); padding: 0.5rem 1rem;">
-              Common Realities:
-            </div>
-            <div
-              style="text-align: center; font-size: 1.3rem; font-weight: 700; color: var(--p600); padding: 0.5rem 1rem; border-left: 2px solid var(--p300);">
-              अब समाधान है
-            </div>
-          </div>
-
-          <div class="promise-grid" style="grid-template-columns: 1fr 1fr;">
-            <div class="promise-item">
-              <p><strong>Business grows...</strong><br />Loan/Stress grows</p>
-            </div>
-            <div class="promise-item" style="border-left: 2px solid var(--p300);">
-              <p><strong>You Don't have to choose between Money and Peace</strong></p>
-            </div>
-          </div>
-          <div class="promise-grid" style="grid-template-columns: 1fr 1fr; margin-top: 1rem;">
-            <div class="promise-item">
-              <p><strong>Profit comes...</strong><br />Peace goes</p>
-            </div>
-            <div class="promise-item" style="border-left: 2px solid var(--p300);">
-              <p><strong>You can have BOTH<br />without losing yourself</strong></p>
-            </div>
-          </div>
-          <div class="promise-grid" style="grid-template-columns: 1fr 1fr; margin-top: 1rem;">
-            <div class="promise-item">
-              <p><strong>Relationships suffer<br />Respect outside... pressure inside</strong></p>
-            </div>
-            <div class="promise-item" style="border-left: 2px solid var(--p300);">
-              <p><strong>Discover a different thinking system</strong></p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4-R Framework -->
-        <div class="section-header">
-          <p class="section-subtitle" style="font-size: 1.6rem; font-weight: 700; color: var(--p700);">4-R लाइफ फॉर्मूला
-          </p>
-        </div>
-
-        <div class="four-r-framework">
-          <div class="four-r-item">
-            <div class="four-r-icon">₹</div>
-            <div class="four-r-label-hi">सम्पत्ति</div>
-            <div class="four-r-label">Rupees</div>
-            <p>Rupees</p>
-          </div>
-          <div class="four-r-item">
-            <div class="four-r-icon">🤝</div>
-            <div class="four-r-label-hi">सम्बन्ध</div>
-            <div class="four-r-label">Relations</div>
-            <p>Relations</p>
-          </div>
-          <div class="four-r-item">
-            <div class="four-r-icon">🏆</div>
-            <div class="four-r-label-hi">सम्मान</div>
-            <div class="four-r-label">Respect</div>
-            <p>Respect</p>
-          </div>
-          <div class="four-r-item">
-            <div class="four-r-icon">🧘</div>
-            <div class="four-r-label-hi">समाधि</div>
-            <div class="four-r-label">Relax</div>
-            <p>Relax</p>
-          </div>
-        </div>
-
-        <!-- Spiritual Clarity -->
-        <div class="section-header">
-          <p style="font-size: 1.6rem; font-weight: 700; color: var(--p700); margin-bottom: 0.3rem;">समभाव से सब सम्भव
-          </p>
-          <p style="font-size: 1.2rem; font-weight: 500; color: var(--ink2);">और सम्भव सम्वाद से।</p>
-        </div>
-
-        <p
-          style="font-size: 1.3rem; font-weight: 600; text-align: center; color: var(--ink2); line-height: 1.6; margin-bottom: 2rem;">
-          Build scalable, sustainable business processes with inner wisdom at the core.
-        </p>
-
-        <div class="corporate-grid">
-          <div class="card corporate-card">
-            <div class="card-icon">📊</div>
-            <h3>Business Excellence</h3>
-            <p>Build scalable, sustainable business processes with inner wisdom at the core.</p>
-          </div>
-          <div class="card corporate-card">
-            <div class="card-icon">🧠</div>
-            <h3>Spiritual Clarity</h3>
-            <p>Cultivate Standardisation (समता) as the foundation of every decision and relationship with employee.</p>
-          </div>
-        </div>
-
-        <div class="corporate-grid">
-          <div class="card corporate-card">
-            <div class="card-icon">💼</div>
-            <h3>Employee-Employer Relations</h3>
-            <p>Resolve workplace tensions with "अनेकान्त" and open mindedness.</p>
-          </div>
-          <div class="card corporate-card">
-            <div class="card-icon">🤝</div>
-            <h3>Customer-Supplier Harmony</h3>
-            <p>Build trust and long-term partnerships through spiritual clarity and value creation not just price.</p>
-          </div>
-        </div>
-
-        <!-- Improved Relations & Respect -->
-        <div class="section-header" style="margin-top: 3rem;">
-          <h2 class="font-display">IMPROVED RELATIONS & RESPECT</h2>
-          <p class="section-subtitle">समभाव, सम्वाद से ! सम्वाद, "अनेकान्त" से ! "अनेकान्त" ही मूल है, बाकी सब भूल है !
-          </p>
-          <h3 style="text-align: center;">Single - Life Formula</h3>
-        </div>
-
-        <div class="corporate-grid">
-          <div class="card corporate-card">
-            <div class="card-icon">🚀</div>
-            <h3>Peaceful Profit Monk Model</h3>
-            <p style="margin-bottom: 1.5rem;">Grow your Business and Deepen your Peace - the "Peaceful Profit
-              Monk" methodology.
-            </p>
-
-            <div class="holistic-vision">
-              <p class="vision-title">HOLISTIC VISION - "(सम्यक दृष्टि)"</p>
-              <div class="vision-flow">
-                <div class="vision-box">
-                  <div class="vision-win">WIN</div>
-                  <div class="vision-label">Employee First</div>
-                </div>
-                <div class="vision-arrow">➔</div>
-                <div class="vision-arrow--vertical">⬇</div>
-
-                <div class="vision-box">
-                  <div class="vision-win">WIN</div>
-                  <div class="vision-label">Customer Must</div>
-                </div>
-                <div class="vision-arrow">➔</div>
-                <div class="vision-arrow--vertical">⬇</div>
-
-                <div class="vision-box">
-                  <div class="vision-win">WIN</div>
-                  <div class="vision-label">Profit Just</div>
-                </div>
-                <div class="vision-arrow">➔</div>
-                <div class="vision-arrow--vertical">⬇</div>
-
-                <div class="vision-box">
-                  <div class="vision-win">WIN</div>
-                  <div class="vision-label">Planet Best</div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card corporate-card">
-            <div class="card-icon">📈</div>
-            <h3>Proven Results</h3>
-            <p>Transformed the business & peace of 300+ clients. Learn the 6-dimensions of business dharma.</p>
-          </div>
-        </div>
-
-        <!-- Testimonials -->
-        <div class="section-header" style="margin-top: 3rem;">
-          <h2 class="font-display">RESULTS / TESTIMONIALS</h2>
-          <p class="section-subtitle">Corporate transformation stories</p>
-        </div>
-
-        <div class="testimonials-grid">
-          <div class="video-card video-card--inline" data-video-id="f13nS_iPhjQ">
-            <div class="video-qr">
-              <div class="video-inline-thumb" role="button" tabindex="0"
-                aria-label="EXPERIENCES OF BUSINESS GROWTH & PEACE Easily and Spiritually.">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img">
-                    <img src="https://img.youtube.com/vi/f13nS_iPhjQ/hqdefault.jpg"
-                      alt="EXPERIENCES OF BUSINESS GROWTH & PEACE Easily and Spiritually.">
-                    <div class="video-inline-play">
-                      <svg viewBox="0 0 24 24" width="22" height="22">
-                        <circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.7)" />
-                        <polygon points="10,7 17,12 10,17" fill="white" />
-                      </svg>
-                    </div>
-                  </div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch story</span>
-                    <span class="media-preview__title">EXPERIENCES OF BUSINESS GROWTH & PEACE Easily and Spiritually.</span>
-                    <span class="media-preview__meta">Corporate experience</span>
-                  </span>
-                  <span class="media-preview__cta">Play</span>
-                </span>
-              </div>
-            </div>
-            <div class="video-info">
-              <h4><a href="https://youtu.be/f13nS_iPhjQ?si=L7U2r89H5-escgDC" target="_blank" rel="noreferrer">EXPERIENCES OF BUSINESS GROWTH & PEACE Easily and Spiritually.</a></h4>
-              <p class="video-duration">Click to play — inline</p>
-            </div>
-          </div>
-
-          <!-- More corporate videos -->
-
-          <div class="video-card">
-            <div class="video-qr">
-              <a class="media-preview-link media-preview-link--teal" href="https://www.youtube.com/watch?v=8x-nM8RbvYY"
-                target="_blank" rel="noreferrer" aria-label="Open Business Growth Easily story">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img
-                      src="https://img.youtube.com/vi/8x-nM8RbvYY/hqdefault.jpg" alt="Topline case"></div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch clip</span>
-                    <span class="media-preview__title">Topline case</span>
-                    <span class="media-preview__meta">5:54 spotlight</span>
-                  </span>
-                  <span class="media-preview__cta">Play</span>
-                </span>
-              </a>
-            </div>
-            <div class="video-info">
-              <h4>Business Growth Easily - On the Journey of making Topline as Bottomline</h4>
-              <p class="video-duration">5:54</p>
-            </div>
-          </div>
-          <div class="video-card">
-            <div class="video-qr">
-              <a class="media-preview-link media-preview-link--violet"
-                href="https://www.youtube.com/watch?v=6aSDGVu7Kq8" target="_blank" rel="noreferrer"
-                aria-label="Open Consistent Business Growth story">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img
-                      src="https://img.youtube.com/vi/6aSDGVu7Kq8/hqdefault.jpg" alt="Before / after"></div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch clip</span>
-                    <span class="media-preview__title">Before / after</span>
-                    <span class="media-preview__meta">COVID era result</span>
-                  </span>
-                  <span class="media-preview__cta">Play</span>
-                </span>
-              </a>
-            </div>
-            <div class="video-info">
-              <h4>Consistent Business Growth - Before and also with COVID</h4>
-              <p class="video-duration">7:37</p>
-            </div>
-          </div>
-          <div class="video-card">
-            <div class="video-qr">
-              <a class="media-preview-link media-preview-link--gold" href="https://www.youtube.com/watch?v=vWI2FXeKFXU"
-                target="_blank" rel="noreferrer" aria-label="Open Once again Consistent Business Growth story">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img
-                      src="https://img.youtube.com/vi/vWI2FXeKFXU/hqdefault.jpg" alt="Profit story"></div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch clip</span>
-                    <span class="media-preview__title">Profit story</span>
-                    <span class="media-preview__meta">4:08 spotlight</span>
-                  </span>
-                  <span class="media-preview__cta">Play</span>
-                </span>
-              </a>
-            </div>
-            <div class="video-info">
-              <h4>Once again Consistent Business Growth</h4>
-              <p class="video-duration">4:08</p>
-            </div>
-          </div>
-          <div class="video-card">
-            <div class="video-qr">
-              <a class="media-preview-link media-preview-link--rose" href="https://www.youtube.com/watch?v=sSmWPtr8Lq0"
-                target="_blank" rel="noreferrer"
-                aria-label="Open Sustaining Business Growth even in COVID situation story">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img
-                      src="https://img.youtube.com/vi/sSmWPtr8Lq0/hqdefault.jpg" alt="COVID case"></div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch clip</span>
-                    <span class="media-preview__title">COVID case</span>
-                    <span class="media-preview__meta">2:22 impact</span>
-                  </span>
-                  <span class="media-preview__cta">Play</span>
-                </span>
-              </a>
-            </div>
-            <div class="video-info">
-              <h4>Sustaining Business Growth even in COVID situation</h4>
-              <p class="video-duration">2:22</p>
-            </div>
-          </div>
-          <div class="video-card">
-            <div class="video-qr">
-              <a class="media-preview-link media-preview-link--client"
-                href="https://www.youtube.com/watch?v=ScmJzTFFq0Y" target="_blank" rel="noreferrer"
-                aria-label="Open Business Growth through systems story">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img
-                      src="https://img.youtube.com/vi/ScmJzTFFq0Y/hqdefault.jpg" alt="Amay"></div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Speaker spotlight</span>
-                    <span class="media-preview__title">Amay</span>
-                    <span class="media-preview__meta">Director, Riddhi Siddhi</span>
-                  </span>
-                  <span class="media-preview__cta">Play</span>
-                </span>
-              </a>
-            </div>
-            <div class="video-info">
-              <h4>Business Growth through systems Amay, Director, Riddhi Siddhi</h4>
-              <p class="video-duration">5:07</p>
-            </div>
-          </div>
-          <div class="video-card">
-            <div class="video-qr">
-              <a class="media-preview-link media-preview-link--founder"
-                href="https://www.youtube.com/watch?v=XApizg71ook" target="_blank" rel="noreferrer"
-                aria-label="Open Profitability transformation through systems story">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img
-                      src="https://img.youtube.com/vi/XApizg71ook/hqdefault.jpg" alt="Ishwer Bajaj"></div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Speaker spotlight</span>
-                    <span class="media-preview__title">Ishwer Bajaj</span>
-                    <span class="media-preview__meta">MD, Sainest</span>
-                  </span>
-                  <span class="media-preview__cta">Play</span>
-                </span>
-              </a>
-            </div>
-            <div class="video-info">
-              <h4> Business transformation through systems | Ishwer Bajaj, MD Sainest</h4>
-              <p class="video-duration">3:03</p>
-            </div>
-          </div>
-
-          <div class="video-card">
-            <div class="video-qr">
-              <a class="media-preview-link media-preview-link--violet"
-                href="https://www.youtube.com/watch?v=1niQwr87z40" target="_blank" rel="noreferrer"
-                aria-label="Open Employees का काम आसान - जगत का कल्याण story">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img
-                      src="https://img.youtube.com/vi/1niQwr87z40/hqdefault.jpg" alt="Employees"></div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch story</span>
-                    <span class="media-preview__title">Employees</span>
-                    <span class="media-preview__meta">Work made easier</span>
-                  </span>
-                  <span class="media-preview__cta">Play</span>
-                </span>
-              </a>
-            </div>
-            <div class="video-info">
-              <h4>Employees का काम आसान - जगत का कल्याण</h4>
-              <p class="video-duration">5:43</p>
-            </div>
-          </div>
-          <div class="video-card video-card--inline" data-video-id="be_v1SagU7c">
-            <div class="video-qr">
-              <div class="video-inline-thumb" role="button" tabindex="0" aria-label="Play Lean akar video">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img">
-                    <img src="https://img.youtube.com/vi/be_v1SagU7c/hqdefault.jpg" alt="Lean worker">
-                    <div class="video-inline-play">
-                      <svg viewBox="0 0 24 24" width="22" height="22">
-                        <circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.7)" />
-                        <polygon points="10,7 17,12 10,17" fill="white" />
-                      </svg>
-                    </div>
-                  </div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch story</span>
-                    <span class="media-preview__title">Lean worker</span>
-                    <span class="media-preview__meta">Mindset shift</span>
-                  </span>
-                  <span class="media-preview__cta">Play</span>
-                </span>
-              </div>
-            </div>
-            <div class="video-info">
-              <h4>Lean akar वर्कर की सोच बदल दी</h4>
-              <p class="video-duration">Click to play — inline</p>
-            </div>
-          </div>
-          <div class="video-card video-card--inline" data-video-id="Q3BKJpUKIUU">
-            <div class="video-qr">
-              <div class="video-inline-thumb" role="button" tabindex="0" aria-label="Play Summangala ji video">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img">
-                    <img src="https://i.ytimg.com/vi/Q3BKJpUKIUU/hqdefault.jpg" alt="Summangala ji">
-                    <div class="video-inline-play">
-                      <svg viewBox="0 0 24 24" width="22" height="22">
-                        <circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.7)" />
-                        <polygon points="10,7 17,12 10,17" fill="white" />
-                      </svg>
-                    </div>
-                  </div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch story</span>
-                    <span class="media-preview__title">Summangala ji</span>
-                    <span class="media-preview__meta">Meditation benefit</span>
-                  </span>
-                  <span class="media-preview__cta">Play</span>
-                </span>
-              </div>
-            </div>
-            <div class="video-info">
-              <h4><a href="https://youtu.be/Q3BKJpUKIUU" target="_blank" rel="noreferrer">कैसे ध्यान के द्वारा नींद की गुणवत्ता बेहतर होती है - सुमंगला जी का अनुभव</a></h4>
-              <p class="video-duration">Click to play — inline</p>
-            </div>
-          </div>
-
-        </div>
-
-        <!-- Your Guide -->
-        <div class="section-header" style="margin-top: 3rem;">
-          <h2 class="font-display">✦ YOUR GUIDE ✦</h2>
-          <p class="section-subtitle">M. L. SURIYA</p>
-        </div>
-
-        <div class="guide-container">
-          <div class="guide-content">
-            <p><strong>Business Guru • Spiritual Master • Master Trainer</strong></p>
-            <div class="credentials">
-              <h4>From the masterclass profile:</h4>
-              <ul>
-                <li>✓ Authored "Business Growth & Lean Manufacturing" for Govt. of India (NPC)</li>
-                <li>✓ Transformed the Business & Peace of 300+ Clients</li>
-                <li>✓ Government Certified ZED Master Trainer</li>
-                <li>✓ Certified Master Meditator</li>
-                <li>✓ 30+ Years in Consulting & Meditation</li>
-                <li>✓ M.A. in Philosophy & Jainology</li>
-                <li>✓ B.E. Mechanical Engineering</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
+      <div class="section-header">
+        <h2 class="font-display">✦ YOUR GUIDE ✦</h2>
+        <p class="section-subtitle">M. L. SURIYA</p>
       </div>
-    </div>
-  </div>
 
-  <!-- ═══════════════════════════════════════ -->
-  <!-- SEEKERS CONTENT (inline toggle) -->
-  <!-- ═══════════════════════════════════════ -->
-  <div id="seekersContent" class="toggle-content">
-    <div class="container">
-      <div class="toggle-content__card">
-        <div class="session-banner seekers-banner" style="margin-bottom: 2rem;">
-          <div class="banner-icon">🌿</div>
-          <div class="banner-text">
-            <h3>17 May 2026 • Sunday • 8 AM – 10 AM</h3>
-            <p>Non-Corporate Spiritual Seekers Special Session</p>
-            <p>Mode: Online • Link will be shared a day before</p>
+      <div class="video-card video-card--inline" data-video-id="f13nS_iPhjQ" style="max-width: 600px; margin: 0 auto 2rem;">
+        <div class="video-qr">
+          <div class="video-inline-thumb" role="button" tabindex="0">
+            <span class="media-preview">
+              <div class="media-preview__portrait media-preview__portrait--img">
+                <img src="https://img.youtube.com/vi/f13nS_iPhjQ/hqdefault.jpg" alt="EXPERIENCES OF BUSINESS GROWTH & PEACE">
+                <div class="video-inline-play">
+                  <svg viewBox="0 0 24 24" width="22" height="22">
+                    <circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.7)" />
+                    <polygon points="10,7 17,12 10,17" fill="white" />
+                  </svg>
+                </div>
+              </div>
+              <span class="media-preview__copy">
+                <span class="media-preview__eyebrow">Watch story</span>
+                <span class="media-preview__title">Business Growth & Peace Vision</span>
+              </span>
+            </span>
           </div>
         </div>
-
-        <!-- Non-Corporate Promise -->
-        <div class="corporate-promise">
-          <div class="promise-grid"
-            style="grid-template-columns: 1fr 1fr; background: transparent; border: none; padding: 0 0 0.5rem; margin-bottom: 0.5rem;">
-            <div
-              style="text-align: center; font-size: 1.3rem; font-weight: 700; color: var(--p600); padding: 0.5rem 1rem;">
-              Common Realities:
-            </div>
-            <div
-              style="text-align: center; font-size: 1.3rem; font-weight: 700; color: var(--p600); padding: 0.5rem 1rem; border-left: 2px solid var(--p300);">
-              अब समाधान है...
-            </div>
-          </div>
-
-          <div class="promise-grid" style="grid-template-columns: 1fr 1fr;">
-            <div class="promise-item">
-              <p><strong>Have money...</strong><br />but no peace</p>
-            </div>
-            <div class="promise-item" style="border-left: 2px solid var(--p300);">
-              <p><strong>You Don't have to choose between Money and Peace</strong></p>
-            </div>
-          </div>
-          <div class="promise-grid" style="grid-template-columns: 1fr 1fr; margin-top: 1rem;">
-            <div class="promise-item">
-              <p><strong>Have respect...</strong><br />but stress within</p>
-            </div>
-            <div class="promise-item" style="border-left: 2px solid var(--p300);">
-              <p><strong>You can have BOTH<br />without losing yourself</strong></p>
-            </div>
-          </div>
-          <div class="promise-grid" style="grid-template-columns: 1fr 1fr; margin-top: 1rem;">
-            <div class="promise-item">
-              <p><strong>Have success...<br />but no satisfaction</strong></p>
-            </div>
-            <div class="promise-item" style="border-left: 2px solid var(--p300);">
-              <p><strong>Discover a different thinking system</strong></p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 4-R Framework -->
-        <div class="section-header">
-          <p class="section-subtitle" style="font-size: 1.6rem; font-weight: 700; color: var(--p700);">4-R लाइफ फॉर्मूला
-          </p>
-        </div>
-
-        <div class="four-r-framework">
-          <div class="four-r-item">
-            <div class="four-r-icon">₹</div>
-            <div class="four-r-label-hi">सम्पत्ति</div>
-            <div class="four-r-label">Rupees</div>
-            <p>सम्पत्ति</p>
-          </div>
-          <div class="four-r-item">
-            <div class="four-r-icon">🤝</div>
-            <div class="four-r-label-hi">सम्बन्ध</div>
-            <div class="four-r-label">Relations</div>
-            <p>सम्बन्ध</p>
-          </div>
-          <div class="four-r-item">
-            <div class="four-r-icon">🏆</div>
-            <div class="four-r-label-hi">सम्मान</div>
-            <div class="four-r-label">Respect</div>
-            <p>सम्मान</p>
-          </div>
-          <div class="four-r-item">
-            <div class="four-r-icon">🧘</div>
-            <div class="four-r-label-hi">समाधि</div>
-            <div class="four-r-label">Relax</div>
-            <p>समाधि</p>
-          </div>
-        </div>
-
-        <!-- Spiritual Clarity -->
-        <div class="section-header">
-          <p style="font-size: 1.4rem; font-weight: 600; color: var(--ink2); line-height: 1.5;">Cultivate equanimity
-            (समता) as the foundation of every decision and relationship</p>
-        </div>
-
-        <div class="corporate-grid">
-          <div class="card seekers-card">
-            <div class="card-icon">🧘</div>
-            <h3>Meditation & Spiritual Clarity</h3>
-            <p>
-              धर्म क्या है?<br>
-              ध्यान क्या है?<br>
-              भगवान क्या हैं?
-            </p>
-          </div>
-          <div class="card seekers-card">
-            <div class="card-icon">📖</div>
-            <h3>Vedic Wisdom Foundation</h3>
-            <p>गीता, अष्टावक्र गीता, वेदान्त, जैन धर्म, बौद्ध धर्म, स्वामीनारायण, उपनिषद और षट्दर्शन पर आधारित</p>
-          </div>
-        </div>
-
-        <!-- Life Excellence -->
-        <div class="section-header" style="margin-top: 3rem;">
-          <h2 class="font-display">LIFE EXCELLENCE</h2>
-          <p class="section-subtitle">Build inner clarity and sustainable peace with ancient wisdom at the core</p>
-        </div>
-
-        <div class="corporate-grid">
-          <div class="card seekers-card">
-            <div class="card-icon">💫</div>
-            <h3>The Master Key: अनेकान्त</h3>
-            <p>Single Formula of Life - Open mindedness with multiple perspectives - the root of all harmony</p>
-          </div>
-          <div class="card seekers-card">
-            <div class="card-icon">🤝</div>
-            <h3>Conflict Resolution</h3>
-            <p>Resolve conflicts in all relationships: family, spouse, siblings, employees and more</p>
-          </div>
-        </div>
-
-        <!-- Improved Relations & Respect -->
-        <div class="section-header" style="margin-top: 3rem;">
-          <h2 class="font-display">IMPROVED RELATIONS & RESPECT</h2>
-          <p class="section-subtitle">समभाव, सम्वाद से ! सम्वाद, "अनेकान्त" से ! "अनेकान्त" ही मूल है, बाकी सब भूल है !
-          </p>
-          <h3 style="text-align: center;">Single - Life Formula</h3>
-        </div>
-
-        <div class="corporate-grid">
-          <div class="card seekers-card">
-            <div class="card-icon">🌟</div>
-
-            <h3>Complete Life Transformation</h3>
-            <div style="text-align: left; padding-left: 18px; width: fit-content; margin: 0 auto;">
-              <p style="margin: 8px 0;">From Restless to Peaceful Life</p>
-              <p style="margin: 8px 0;">From Stress to Success</p>
-              <p style="margin: 8px 0;">From Stress to Clarity and Confidence</p>
-              <p style="margin: 8px 0;">Lasting Inner Peace</p>
-              <p style="margin: 8px 0;">तनाव मुक्त और शांत जीवन</p>
-            </div>
-          </div>
-          <div class="card seekers-card">
-            <div class="card-icon">💎</div>
-            <h3>6-Dimensions of Dharma</h3>
-            <p>6 धर्म का सार - 1 जीवन सूत्र: build inner clarity and sustainable peace</p>
-          </div>
-        </div>
-
-        <!-- Testimonials -->
-        <div class="section-header" style="margin-top: 3rem;">
-          <h2 class="font-display">RESULTS / TESTIMONIALS</h2>
-          <p class="section-subtitle">See the transformation in real lives</p>
-        </div>
-
-        <div class="testimonials-grid" id="seekersTestimonialsGrid">
-          <div class="video-card">
-            <div class="video-qr">
-              <a class="media-preview-link media-preview-link--client"
-                href="https://youtu.be/f13nS_iPhjQ?si=L7U2r89H5-escgDC" target="_blank" rel="noreferrer"
-                aria-label="Open अनुभव, शांति 🧘 और समृद्धि💰 -दोनों के- Business Growth Easily and Peacefully">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img
-                      src="https://i.ytimg.com/vi/Q3BKJpUKIUU/hqdefault.jpg"
-                      alt="अनुभव, शांति 🧘 और समृद्धि💰 -दोनों के- Business Growth Easily and Peacefully"></div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch story</span>
-                    <span class="media-preview__title">अनुभव, शांति 🧘 और समृद्धि💰 -दोनों के- Business Growth Easily and
-                      Peacefully</span>
-                    <span class="media-preview__meta">Meditation benefit</span>
-                  </span>
-                  <span class="media-preview__cta">Open</span>
-                </span>
-              </a>
-            </div>
-            <div class="video-info">
-              <h4><a href="https://youtu.be/f13nS_iPhjQ?si=L7U2r89H5-escgDC" target="_blank" rel="noreferrer">अनुभव,
-                  शांति 🧘 और समृद्धि💰 -दोनों के- Business Growth Easily and Peacefully</a></h4>
-              <p class="video-duration">Watch on YouTube</p>
-            </div>
-          </div>
-          <div class="video-card">
-            <div class="video-qr">
-              <a class="media-preview-link media-preview-link--client"
-                href="https://youtu.be/3uRj5R1ekw4?si=xxjMnxr44opA3RAQ" target="_blank" rel="noreferrer"
-                aria-label="From low mental state (भखारी) to infinite joy (राजा) - a complete life transformation">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img
-                      src="https://i.ytimg.com/vi/Q3BKJpUKIUU/hqdefault.jpg"
-                      alt="From low mental state (भखारी) to infinite joy (राजा) - a complete life transformation"></div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch story</span>
-                    <span class="media-preview__title">From low mental state (भखारी) to infinite joy (राजा) - a complete
-                      life transformation</span>
-                    <span class="media-preview__meta">Meditation benefit</span>
-                  </span>
-                  <span class="media-preview__cta">Open</span>
-                </span>
-              </a>
-            </div>
-            <div class="video-info">
-              <h4><a href="https://youtu.be/3uRj5R1ekw4?si=xxjMnxr44opA3RAQ" target="_blank" rel="noreferrer">From low
-                  mental state (भखारी) to infinite joy (राजा) - a complete life transformation</a></h4>
-              <p class="video-duration">Watch on YouTube</p>
-            </div>
-          </div>
-          <div class="video-card">
-            <div class="video-qr">
-              <a class="media-preview-link media-preview-link--client"
-                href="https://youtu.be/Q3BKJpUKIUU?si=PnteVCLyz7wdguwe" target="_blank" rel="noreferrer"
-                aria-label="Open कैसे ध्यान के द्वारा नींद की गुणवत्ता बेहतर होती है - सुमंगला जी का अनुभव">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img
-                      src="https://i.ytimg.com/vi/Q3BKJpUKIUU/hqdefault.jpg"
-                      alt="कैसे ध्यान के द्वारा नींद की गुणवत्ता बेहतर होती है - सुमंगला जी का अनुभव"></div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch story</span>
-                    <span class="media-preview__title">Summangala ji experience</span>
-                    <span class="media-preview__meta">Meditation benefit</span>
-                  </span>
-                  <span class="media-preview__cta">Open</span>
-                </span>
-              </a>
-            </div>
-            <div class="video-info">
-              <h4><a href="https://youtu.be/Q3BKJpUKIUU?si=PnteVCLyz7wdguwe" target="_blank" rel="noreferrer">कैसे
-                  कैसे ध्यान के द्वारा नींद की गुणवत्ता बेहतर होती है - सुमंगला जी का अनुभव</a></h4>
-              <p class="video-duration">Watch on YouTube</p>
-            </div>
-          </div>
-          <div class="video-card">
-            <div class="video-qr">
-              <a class="media-preview-link media-preview-link--client"
-                href="https://youtu.be/g9i-kUSVjW0?si=zui8tAbJHtcWMKE0" target="_blank" rel="noreferrer"
-                aria-label="Open Transformed Life Feedback-Achieving Lasting Inner Peace by Mr. Mayur (CA)">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img
-                      src="https://i.ytimg.com/vi/g9i-kUSVjW0/hqdefault.jpg"
-                      alt="Transformed Life Feedback-Achieving Lasting Inner Peace by Mr. Mayur (CA)"></div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch story</span>
-                    <span class="media-preview__title">Mr. Mayur feedback</span>
-                    <span class="media-preview__meta">Lasting Inner Peace</span>
-                  </span>
-                  <span class="media-preview__cta">Open</span>
-                </span>
-              </a>
-            </div>
-            <div class="video-info">
-              <h4><a href="https://youtu.be/g9i-kUSVjW0?si=zui8tAbJHtcWMKE0" target="_blank"
-                  rel="noreferrer">Transformed Life Feedback-Achieving Lasting Inner Peace by Mr. Mayur (CA)</a></h4>
-              <p class="video-duration">Watch on YouTube</p>
-            </div>
-          </div>
-          <div class="video-card">
-            <div class="video-qr">
-              <a class="media-preview-link media-preview-link--violet"
-                href="https://youtu.be/mXcT8yJOoNE?si=I__cvzX0b3aSYcKc" target="_blank" rel="noreferrer"
-                aria-label="Open POWER OF JAINISM">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img
-                      src="https://i.ytimg.com/vi/mXcT8yJOoNE/hqdefault.jpg" alt="POWER OF JAINISM"></div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch story</span>
-                    <span class="media-preview__title">Power of Jainism</span>
-                    <span class="media-preview__meta">Wisdom feedback</span>
-                  </span>
-                  <span class="media-preview__cta">Open</span>
-                </span>
-              </a>
-            </div>
-            <div class="video-info">
-              <h4><a href="https://youtu.be/mXcT8yJOoNE?si=I__cvzX0b3aSYcKc" target="_blank" rel="noreferrer">POWER OF
-                  JAINISM</a></h4>
-              <p class="video-duration">Watch on YouTube</p>
-            </div>
-          </div>
-
-          <div class="video-card">
-            <div class="video-qr">
-              <a class="media-preview-link media-preview-link--teal"
-                href="https://youtu.be/ej9gwnoxRbU?si=Zg6_lvjcdZoCt7QU" target="_blank" rel="noreferrer"
-                aria-label="Open खुली आँखों से कैसे ध्यान होता है? खुशबु जी अपना अनुभव साझा करते हुए|">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img
-                      src="https://i.ytimg.com/vi/ej9gwnoxRbU/hqdefault.jpg"
-                      alt="खुली आँखों से कैसे ध्यान होता है? खुशबु जी अपना अनुभव साझा करते हुए|"></div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch story</span>
-                    <span class="media-preview__title">Khushbu ji experience</span>
-                    <span class="media-preview__meta">Open-eyes meditation</span>
-                  </span>
-                  <span class="media-preview__cta">Open</span>
-                </span>
-              </a>
-            </div>
-            <div class="video-info">
-              <h4><a href="https://youtu.be/ej9gwnoxRbU?si=Zg6_lvjcdZoCt7QU" target="_blank" rel="noreferrer">खुली आँखों
-                  से कैसे ध्यान होता है? खुशबु जी अपना अनुभव साझा करते हुए|</a></h4>
-              <p class="video-duration">Watch on YouTube</p>
-            </div>
-          </div>
-          <div class="video-card">
-            <div class="video-qr">
-              <a class="media-preview-link media-preview-link--founder"
-                href="https://youtu.be/_it71PJ2SAA?si=KvwYlDJKbC_CXIMJ" target="_blank" rel="noreferrer"
-                aria-label="Open दो Session में ही जीनवाणी से जीवन दृष्टि परिवर्तन का अनुभव - किरण राजेन्द्र जी डाँगी के द्वारा">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img
-                      src="https://i.ytimg.com/vi/_it71PJ2SAA/hqdefault.jpg"
-                      alt="दो Session में ही जीनवाणी से जीवन दृष्टि परिवर्तन का अनुभव - किरण राजेन्द्र जी डाँगी के द्वारा">
-                  </div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch story</span>
-                    <span class="media-preview__title">Kiran Rajendra ji experience</span>
-                    <span class="media-preview__meta">Life vision shift</span>
-                  </span>
-                  <span class="media-preview__cta">Open</span>
-                </span>
-              </a>
-            </div>
-            <div class="video-info">
-              <h4><a href="https://youtu.be/_it71PJ2SAA?si=KvwYlDJKbC_CXIMJ" target="_blank" rel="noreferrer">दो Session
-                  में ही जीनवाणी से जीवन दृष्टि परिवर्तन का अनुभव - किरण राजेन्द्र जी डाँगी के द्वारा</a></h4>
-              <p class="video-duration">Watch on YouTube</p>
-            </div>
-          </div>
-          <div class="video-card">
-            <div class="video-qr">
-              <a class="media-preview-link media-preview-link--teal"
-                href="https://youtu.be/PCKIYiHQoio?si=Vx06wOu_TdR9Iy3Q" target="_blank" rel="noreferrer"
-                aria-label="Open Transforming Feedback">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img"><img
-                      src="https://i.ytimg.com/vi/PCKIYiHQoio/hqdefault.jpg" alt="Transforming Feedback"></div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch story</span>
-                    <span class="media-preview__title">Transforming feedback</span>
-                    <span class="media-preview__meta">Testimonial clip</span>
-                  </span>
-                  <span class="media-preview__cta">Open</span>
-                </span>
-              </a>
-            </div>
-            <div class="video-info">
-              <h4><a href="https://youtu.be/PCKIYiHQoio?si=Vx06wOu_TdR9Iy3Q" target="_blank"
-                  rel="noreferrer">Transforming Feedback</a></h4>
-              <p class="video-duration">Watch on YouTube</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="section-header" style="margin-top: 3rem;">
-          <h2 class="font-display">✦ YOUR GUIDE ✦</h2>
-          <p class="section-subtitle">M. L. SURIYA</p>
-        </div>
-
-        <div class="guide-container">
-          <div class="guide-content">
-            <p><strong>Business Guru • Spiritual Master • Master Trainer</strong></p>
-            <div class="credentials">
-              <h4>From the masterclass profile:</h4>
-              <ul>
-                <li>✓ Authored "Business Growth & Lean Manufacturing" for Govt. of India (NPC)</li>
-                <li>✓ Supported to Doubled the Profit &amp; Peace of 300+ Clients</li>
-                <li>✓ Government Certified ZED Master Trainer</li>
-                <li>✓ Certified Master Meditator</li>
-                <li>✓ 30+ Years in Consulting &amp; Meditation</li>
-                <li>✓ M.A. in Philosophy &amp; Jainology</li>
-                <li>✓ B.E. Mechanical Engineering</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
       </div>
-    </div>
-  </div>
 
-  <!-- ═══════════════════════════════════════ -->
-  <!-- ABOUT SECTION -->
-  <!-- ═══════════════════════════════════════ -->
-  <section id="about" class="about-section">
-    <div class="container">
-      <div class="about-content">
-        <div class="about-text">
-          <h2 class="font-display">About M.L. Suriya</h2>
-          <p><strong>Business Consultant • Spiritual Guide • Expert Trainer</strong></p>
-          <p>M.L. Suriya is a renowned guide dedicated to helping individuals and corporate leaders achieve both
-            prosperity and inner peace through the 4-R Life Success System.</p>
-
-          <div class="credentials">
-            <h4>Credentials & Achievements:</h4>
-            <ul>
-              <li>✓ Authored "Business Growth & Lean Manufacturing" for Govt. of India (NPC)</li>
-              <li>✓ Helped 300+ Clients Transform their Business & Peace</li>
-              <li>✓ Government Certified ZED Master Trainer</li>
-              <li>✓ Certified Master Meditator</li>
-              <li>✓ 30+ Years in Consulting & Meditation</li>
-              <li>✓ M.A. in Philosophy & Jainology</li>
-              <li>✓ B.E. Mechanical Engineering</li>
+      <div class="guide-container" style="max-width: 700px; margin: 0 auto;">
+        <div class="guide-content">
+          <p style="text-align: center; font-size: 1.2rem;"><strong>Business Consultant • Spiritual Guide • Expert Trainer</strong></p>
+          <div class="credentials" style="margin-top: 1.5rem;">
+            <h4 style="color: var(--p700); border-bottom: 2px solid var(--p200); padding-bottom: 0.5rem; margin-bottom: 1rem;">From the masterclass profile:</h4>
+            <ul style="list-style: none; padding: 0;">
+              <li style="margin-bottom: 0.8rem;">✓ Authored "Business Growth & Lean Manufacturing" for Govt. of India (NPC)</li>
+              <li style="margin-bottom: 0.8rem;">✓ Supported 300+ Clients in Transforming Business & Peace</li>
+              <li style="margin-bottom: 0.8rem;">✓ Government Certified ZED Master Trainer</li>
+              <li style="margin-bottom: 0.8rem;">✓ Certified Master Meditator</li>
+              <li style="margin-bottom: 0.8rem;">✓ 30+ Years in Consulting & Meditation</li>
+              <li style="margin-bottom: 0.8rem;">✓ M.A. in Philosophy & Jainology</li>
+              <li style="margin-bottom: 0.8rem;">✓ B.E. Mechanical Engineering</li>
             </ul>
           </div>
-
-          <p><strong>Philosophy:</strong> "Peaceful Profit Approach" (ध्यान धन साधक) - achieving business excellence while
-            maintaining inner
-            peace and spiritual clarity.</p>
-        </div>
-        <div class="about-stats">
-          <div class="stat stat--count" data-target="300" data-suffix="+">
-            <div class="stat-number"><span class="stat-num">0</span><span class="stat-suffix">+</span></div>
-            <div class="stat-label">Clients Transformed</div>
-          </div>
-          <div class="stat stat--count" data-target="30" data-suffix="+">
-            <div class="stat-number"><span class="stat-num">0</span><span class="stat-suffix">+</span></div>
-            <div class="stat-label">Years Experience</div>
-          </div>
-          <div class="stat stat--multiplier" data-target="2">
-            <div class="stat-number">
-              <span class="stat-multiplier-progress">
-                <span class="stat-multiplier-fill"></span>
-              </span>
-              <span class="stat-multiplier-text"><span class="stat-num">0</span>X</span>
-            </div>
-            <div class="stat-label">Profit & Peace</div>
-          </div>
         </div>
       </div>
-
-      <div class="testimonials-section">
-        <h3 class="font-display">Testimonials</h3>
-        <div class="testimonials-grid">
-          <div class="video-card video-card--inline" data-video-id="f13nS_iPhjQ">
-            <div class="video-qr">
-              <div class="video-inline-thumb" role="button" tabindex="0"
-                aria-label="Play Bhavin Soni testimonial video">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img">
-                    <img src="https://img.youtube.com/vi/f13nS_iPhjQ/hqdefault.jpg" alt="Bhavin Soni testimonial video">
-                    <div class="video-inline-play">
-                      <svg viewBox="0 0 24 24" width="22" height="22">
-                        <circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.7)" />
-                        <polygon points="10,7 17,12 10,17" fill="white" />
-                      </svg>
-                    </div>
-                  </div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch story</span>
-                    <span class="media-preview__title">Bhavin Soni</span>
-                    <span class="media-preview__meta">Corporate feedback</span>
-                  </span>
-                  <span class="media-preview__cta">Play</span>
-                </span>
-              </div>
-            </div>
-            <div class="video-info">
-              <h4>EXPERIENCES OF BUSINESS GROWTH & PEACE Easily and Spiritually.</h4>
-              <p class="video-duration">Click to play — inline</p>
-            </div>
-          </div>
-          <div class="video-card video-card--inline" data-video-id="3uRj5R1ekw4">
-            <div class="video-qr">
-              <div class="video-inline-thumb" role="button" tabindex="0"
-                aria-label="Play life transformation testimonial video">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img">
-                    <img src="https://img.youtube.com/vi/3uRj5R1ekw4/hqdefault.jpg"
-                      alt="Life transformation testimonial video">
-                    <div class="video-inline-play">
-                      <svg viewBox="0 0 24 24" width="22" height="22">
-                        <circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.7)" />
-                        <polygon points="10,7 17,12 10,17" fill="white" />
-                      </svg>
-                    </div>
-                  </div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch story</span>
-                    <span class="media-preview__title">Life transformation</span>
-                    <span class="media-preview__meta">Mindset shift</span>
-                  </span>
-                  <span class="media-preview__cta">Play</span>
-                </span>
-              </div>
-            </div>
-            <div class="video-info">
-              <h4>From low mental state (भखारी) to infinite joy (राजा) - a complete life transformation</h4>
-              <p class="video-duration">Click to play — inline</p>
-            </div>
-          </div>
-          <div class="video-card video-card--inline" data-video-id="mXcT8yJOoNE">
-            <div class="video-qr">
-              <div class="video-inline-thumb" role="button" tabindex="0"
-                aria-label="Play Power of Jainism testimonial video">
-                <span class="media-preview">
-                  <div class="media-preview__portrait media-preview__portrait--img">
-                    <img src="https://img.youtube.com/vi/mXcT8yJOoNE/hqdefault.jpg"
-                      alt="Power of Jainism testimonial video">
-                    <div class="video-inline-play">
-                      <svg viewBox="0 0 24 24" width="22" height="22">
-                        <circle cx="12" cy="12" r="11" fill="rgba(0,0,0,0.7)" />
-                        <polygon points="10,7 17,12 10,17" fill="white" />
-                      </svg>
-                    </div>
-                  </div>
-                  <span class="media-preview__copy">
-                    <span class="media-preview__eyebrow">Watch story</span>
-                    <span class="media-preview__title">Power of Jainism</span>
-                    <span class="media-preview__meta">Wisdom feedback</span>
-                  </span>
-                  <span class="media-preview__cta">Play</span>
-                </span>
-              </div>
-            </div>
-            <div class="video-info">
-              <h4>Power of Jainism</h4>
-              <p class="video-duration">Click to play — inline</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
   </section>
 
-  <!-- ═══════════════════════════════════════ -->
-  <!-- PROGRAMS SECTION -->
-  <!-- ═══════════════════════════════════════ -->
-  <section id="contact" class="programs-section">
+  <!-- 5. 3 PROGRAM LEVELS (RISHI / MUNI / YOGI) (KEEP) -->
+  <section class="programs-section" style="padding: 4rem 0; background: #f9fafb;">
     <div class="container">
       <div class="section-header">
         <h2 class="font-display">The Program - 3 Levels of Mastery</h2>
@@ -1104,114 +176,85 @@
       </div>
 
       <div class="programs-grid">
-        <div class="program-card" onclick="window.open('https://forms.gle/qwGXxgUzmhL26No37', '_blank')"
-          style="cursor: pointer;">
+        <div class="program-card join-trigger" style="cursor: pointer;">
           <div class="program-level">1</div>
           <h3 class="program-title">RISHI <span class="devanagari">ऋषि</span></h3>
-          <p class="program-duration">2 HOURS — 1 Day</p>
-          <p>2 HOURS - 1 DAY. Entry-level mastery to understand the 4-R framework.</p>
+          <p class="program-duration">2 HOURS — 1 DAY</p>
+          <p>Entry-level mastery to understand the 4-R framework.</p>
         </div>
-
-        <div class="program-card" onclick="window.open('https://forms.gle/qwGXxgUzmhL26No37', '_blank')"
-          style="cursor: pointer;">
+        <div class="program-card join-trigger" style="cursor: pointer;">
           <div class="program-level">2</div>
           <h3 class="program-title">MUNI <span class="devanagari">मुनि</span></h3>
-          <p class="program-duration">6 DAYS — 2 Hours Each Day</p>
-          <p>6 DAYS - EACH DAY 2 HOURS. Intermediate mastery with practical application.</p>
+          <p class="program-duration">6 DAYS — EACH DAY 2 HOURS</p>
+          <p>Intermediate mastery with practical application.</p>
         </div>
-
-        <div class="program-card featured" onclick="window.open('https://forms.gle/qwGXxgUzmhL26No37', '_blank')"
-          style="cursor: pointer;">
+        <div class="program-card featured join-trigger" style="cursor: pointer;">
           <div class="program-level">3</div>
           <h3 class="program-title">YOGI <span class="devanagari">योगी</span></h3>
-          <p class="program-duration">LIFETIME — 1 Hour Daily</p>
-          <p>LIFETIME - EACH DAY 1 HOUR. Advanced mastery for continuous growth and support.</p>
+          <p class="program-duration">LIFETIME — EACH DAY 1 HOUR</p>
+          <p>Advanced mastery for continuous growth and support.</p>
           <div class="featured-badge">Most Popular</div>
         </div>
       </div>
 
-      <div
-        style="max-width: 500px; margin: 2rem auto; background: white; border-left: 4px solid #4a1f94; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+      <!-- 6. GOOGLE FORM REGISTRATION BLOCK (KEEP) -->
+      <div id="contact" style="max-width: 500px; margin: 3rem auto 0; background: white; border-left: 4px solid #4a1f94; padding: 2rem; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
         <h3 style="text-align: center; margin: 0 0 1.5rem; color: #160a2e;">Payment & Registration</h3>
-
-        <div
-          style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid #e5e7eb; color: #374151;">
+        <div style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid #e5e7eb; color: #374151;">
           <span style="font-weight: 600;">Contribution</span>
           <span>₹51 (Donation)</span>
         </div>
-        <div
-          style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid #e5e7eb; color: #374151;">
+        <div style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: 1px solid #e5e7eb; color: #374151;">
           <span style="font-weight: 600;">Programs</span>
-          <span>ध्यान भी ध्यान भी Entry मास्टरक्लास</span>
+          <span>Entry मास्टरक्लास</span>
         </div>
-        <div
-          style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: none; color: #374151;">
+        <div style="display: flex; justify-content: space-between; padding: 0.8rem 0; border-bottom: none; color: #374151;">
           <span style="font-weight: 600;">Mode</span>
           <span>Online</span>
         </div>
 
         <div style="text-align: center; margin-top: 1.5rem;">
-          <button id="openJoinModal" class="btn btn-secondary">
+          <button id="openJoinModal" class="btn btn-secondary" style="width: 100%; padding: 1rem; font-size: 1.1rem; font-weight: 700;">
             Join Masterclass Now
           </button>
         </div>
       </div>
-
-      <!-- Join Modal (Meta Compliant) -->
-      <div id="joinModal" class="modal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(8px);">
-        <div class="modal-content" style="background-color: white; margin: 5% auto; padding: 20px; border-radius: 12px; width: 90%; max-width: 600px; height: 80vh; position: relative;">
-          <button id="closeJoinModal" style="position: absolute; right: 15px; top: 10px; font-size: 28px; font-weight: bold; cursor: pointer; background: none; border: none;">&times;</button>
-          <iframe id="googleFormIframe" src="about:blank" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
-        </div>
-      </div>
-
     </div>
   </section>
 
-  <!-- ═══════════════════════════════════════ -->
-  <!-- CONTACT FOOTER -->
-  <!-- ═══════════════════════════════════════ -->
-  <section class="contact-footer">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="font-display">Connect With Us</h2>
-        <p class="section-subtitle">For any further queries or support</p>
-      </div>
-      <div class="contact-footer-grid">
-        <a href="tel:9427611171" class="footer-contact-item">
-          <div class="footer-contact-icon">📞</div>
-          <div class="footer-contact-label">Call Us</div>
-          <div class="footer-contact-value">9427611171</div>
-        </a>
-        <a href="mailto:info@herequality.com" class="footer-contact-item">
-          <div class="footer-contact-icon">✉️</div>
-          <div class="footer-contact-label">Email Us</div>
-          <div class="footer-contact-value">info@herequality.com</div>
-        </a>
-      </div>
-    </div>
-  </section>
+  <!-- ALL OTHER SECTIONS COMMENTED OUT -->
+  <!-- 
+  <section id="about-full" class="about-section"> ... </section>
+  <section id="testimonials" class="testimonials-section"> ... </section>
+  <section id="framework" class="framework-section"> ... </section>
+  -->
 
-  <footer class="footer">
+  <!-- FOOTER (KEEP COMPLIANCE LINKS) -->
+  <footer class="footer" style="background: #160a2e; color: white; padding: 2rem 0; text-align: center;">
     <div class="container">
-          <p>&copy; 2026 M.L. Suriya. All rights reserved. | 
-            <a href="privacy.html" style="color: white; text-decoration: underline;">Privacy Policy</a> | 
-            <a href="terms.html" style="color: white; text-decoration: underline;">Terms & Conditions</a> | 
-            <a href="disclaimer.html" style="color: white; text-decoration: underline;">Disclaimer</a>
-          </p>
+      <p>&copy; 2026 M.L. Suriya. All rights reserved.</p>
+      <p style="margin-top: 1rem;">
+        <a href="privacy.html" style="color: white; text-decoration: underline; margin: 0 10px;">Privacy Policy</a> | 
+        <a href="terms.html" style="color: white; text-decoration: underline; margin: 0 10px;">Terms & Conditions</a> | 
+        <a href="disclaimer.html" style="color: white; text-decoration: underline; margin: 0 10px;">Disclaimer</a>
+      </p>
     </div>
   </footer>
 
-  <!-- ═══════════════════════════════════════ -->
-  <!-- VIDEO MODAL -->
-  <!-- ═══════════════════════════════════════ -->
+  <!-- JOIN MODAL (KEEP FOR AD SAFETY) -->
+  <div id="joinModal" class="modal" style="display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.8); backdrop-filter: blur(8px);">
+    <div class="modal-content" style="background-color: white; margin: 5% auto; padding: 20px; border-radius: 12px; width: 90%; max-width: 600px; height: 80vh; position: relative;">
+      <button id="closeJoinModal" style="position: absolute; right: 15px; top: 10px; font-size: 28px; font-weight: bold; cursor: pointer; background: none; border: none;">&times;</button>
+      <iframe id="googleFormIframe" src="about:blank" width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+    </div>
+  </div>
+
+  <!-- VIDEO MODAL (FOR YOUTUBE INLINE) -->
   <div id="videoModal" class="video-modal">
     <div class="video-modal-content">
       <span class="video-modal-close">&times;</span>
       <div class="video-modal-iframe-container">
-        <iframe id="videoModalIframe" src="" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen></iframe>
+        <iframe id="videoModalIframe" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       </div>
     </div>
   </div>
