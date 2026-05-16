@@ -35,7 +35,7 @@ if (seekersCheck) {
       if (corporateContent) corporateContent.style.display = 'none';
       if (seekersContent) {
         seekersContent.style.display = 'block';
-        // loadSeekersTestimonials(); // Disable dynamic loading to use static content in index.html
+        loadSeekersTestimonials(); // Enable dynamic loading to use static content in index.html as fallback
         setTimeout(() => seekersContent.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
       }
     } else {
