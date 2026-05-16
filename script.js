@@ -612,19 +612,19 @@ document.querySelectorAll('.stat--count, .stat--multiplier').forEach(function (e
 // ═══════════════════════════════════════
 function createProgramsSummaryCard() {
   return `
-    <div class="program-card" onclick="window.open('https://forms.gle/qwGXxgUzmhL26No37', '_blank')" style="cursor: pointer;">
+    <div class="program-card join-trigger" style="cursor: pointer;">
       <div class="program-level">1</div>
       <h3 class="program-title">RISHI <span class="devanagari">ऋषि</span></h3>
       <p class="program-duration">2 HOURS — 1 DAY</p>
       <p>Entry-level mastery to understand the 4-R framework.</p>
     </div>
-    <div class="program-card" onclick="window.open('https://forms.gle/qwGXxgUzmhL26No37', '_blank')" style="cursor: pointer;">
+    <div class="program-card join-trigger" style="cursor: pointer;">
       <div class="program-level">2</div>
       <h3 class="program-title">MUNI <span class="devanagari">मुनि</span></h3>
       <p class="program-duration">6 DAYS — EACH DAY 2 HOURS</p>
       <p>Intermediate mastery with practical application.</p>
     </div>
-    <div class="program-card featured" onclick="window.open('https://forms.gle/qwGXxgUzmhL26No37', '_blank')" style="cursor: pointer;">
+    <div class="program-card featured join-trigger" style="cursor: pointer;">
       <div class="program-level">3</div>
       <h3 class="program-title">YOGI <span class="devanagari">योगी</span></h3>
       <p class="program-duration">LIFETIME — EACH DAY 1 HOUR</p>
@@ -636,7 +636,7 @@ function createProgramsSummaryCard() {
 
 function createPaymentCard() {
   return `
-    <div class="program-card payment-card" onclick="window.open('https://forms.gle/qwGXxgUzmhL26No37', '_blank')" style="cursor: pointer; border-left: 4px solid #4a1f94;">
+    <div class="program-card payment-card join-trigger" style="cursor: pointer; border-left: 4px solid #4a1f94;">
       <div class="program-level">✓</div>
       <h3 class="program-title">PAYMENT & REGISTRATION</h3>
       <p class="program-duration">ENTRY मास्टरक्लास</p>
@@ -692,7 +692,47 @@ function insertPaymentCards() {
 }
 
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', insertPaymentCards);
+  document.addEventListener('DOMContentLoaded', () => {
+    insertPaymentCards();
+    initJoinModal();
+  });
 } else {
   insertPaymentCards();
+  initJoinModal();
+}
+
+function initJoinModal() {
+  const joinModal = document.getElementById('joinModal');
+  const closeJoinModalBtn = document.getElementById('closeJoinModal');
+  const googleFormIframe = document.getElementById('googleFormIframe');
+  const embedUrl = "https://docs.google.com/forms/d/e/1FAIpQLSc8dlMIY4RK6BQxrM5Epsd3wjuUIC4Z6afR2WWdDwWAtEgkKw/viewform?embedded=true";
+
+  function openModal() {
+    if (joinModal) {
+      joinModal.style.display = 'block';
+      if (googleFormIframe && googleFormIframe.src === 'about:blank') {
+        googleFormIframe.src = embedUrl;
+      }
+    }
+  }
+
+  // Listen for clicks on ANY element with .join-trigger or id openJoinModal
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('.join-trigger') || e.target.id === 'openJoinModal') {
+      e.preventDefault();
+      openModal();
+    }
+  });
+
+  if (closeJoinModalBtn) {
+    closeJoinModalBtn.addEventListener('click', () => {
+      joinModal.style.display = 'none';
+    });
+  }
+
+  window.addEventListener('click', (event) => {
+    if (event.target === joinModal) {
+      joinModal.style.display = 'none';
+    }
+  });
 }

@@ -1216,35 +1216,6 @@
     </div>
   </div>
 
-  <script>
-    // Join Modal Logic
-    const joinModal = document.getElementById('joinModal');
-    const openJoinModalBtn = document.getElementById('openJoinModal');
-    const closeJoinModalBtn = document.getElementById('closeJoinModal');
-    const googleFormIframe = document.getElementById('googleFormIframe');
-    const embedUrl = "https://docs.google.com/forms/d/e/1FAIpQLSf51l-aZ-TzZlY1aZ1aZ1aZ1aZ1aZ1aZ1aZ1aZ1aZ1aZ1aZ1aZ/viewform?embedded=true"; 
-
-    if (openJoinModalBtn) {
-      openJoinModalBtn.addEventListener('click', () => {
-        joinModal.style.display = 'block';
-        if (googleFormIframe.src === 'about:blank') {
-          googleFormIframe.src = embedUrl;
-        }
-      });
-    }
-
-    if (closeJoinModalBtn) {
-      closeJoinModalBtn.addEventListener('click', () => {
-        joinModal.style.display = 'none';
-      });
-    }
-
-    window.addEventListener('click', (event) => {
-      if (event.target === joinModal) {
-        joinModal.style.display = 'none';
-      }
-    });
-  </script>
   <script type="module" src="script.js"></script>
 </body>
 
