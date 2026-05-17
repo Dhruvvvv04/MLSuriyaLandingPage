@@ -10,6 +10,7 @@ const corporateCheck = document.getElementById('corporateCheck');
 const corporateContent = document.getElementById('corporateContent');
 const seekersContent = document.getElementById('seekersContent');
 const seekersTestimonialsGrid = document.getElementById('seekersTestimonialsGrid');
+const defaultSeekersTestimonialsHTML = seekersTestimonialsGrid ? seekersTestimonialsGrid.innerHTML : '';
 const seekersModal = document.getElementById('seekersModal');
 const corporateModal = document.getElementById('corporateModal');
 
@@ -48,6 +49,11 @@ if (seekersCheck) {
 async function loadSeekersTestimonials() {
   if (!seekersTestimonialsGrid) return;
 
+  // Don't fetch if already loaded successfully
+  if (seekersTestimonialsGrid.dataset.loaded === 'true') return;
+
+  const fallbackHTML = defaultSeekersTestimonialsHTML || seekersTestimonialsGrid.innerHTML;
+
   // Show loading state
   seekersTestimonialsGrid.innerHTML = '<div class="loading">Loading testimonials...</div>';
 
@@ -66,8 +72,7 @@ async function loadSeekersTestimonials() {
     const videoIds = extractVideoIdsFromPlaylist(html);
 
     if (videoIds.length === 0) {
-      seekersTestimonialsGrid.innerHTML = '<div class="error">No testimonials found</div>';
-      return;
+      throw new Error('No testimonials found');
     }
 
     let testimonialsHTML = '';
@@ -118,12 +123,17 @@ async function loadSeekersTestimonials() {
     }
 
     seekersTestimonialsGrid.innerHTML = testimonialsHTML;
+    seekersTestimonialsGrid.dataset.loaded = 'true';
 
     // Initialize inline players for the newly loaded videos
     initInlineVideo();
   } catch (error) {
-    console.error('Error loading seekers testimonials:', error);
-    seekersTestimonialsGrid.innerHTML = '<div class="error">Unable to load testimonials. Please try again later.</div>';
+    console.warn('Could not load dynamic YouTube playlist testimonials (CORS/Network), using static high-trust compliance fallbacks.', error);
+    // Restore static compliant fallback testimonials
+    seekersTestimonialsGrid.innerHTML = fallbackHTML;
+    seekersTestimonialsGrid.dataset.loaded = 'true';
+    // Re-initialize inline videos for the fallback testimonials so they work perfectly!
+    initInlineVideo();
   }
 }
 
@@ -710,8 +720,17 @@ function initJoinModal() {
   function openModal() {
     if (joinModal) {
       joinModal.style.display = 'block';
-      if (googleFormIframe && googleFormIframe.src === 'about:blank') {
+      if (googleFormIframe) {
         googleFormIframe.src = embedUrl;
+      }
+    }
+  }
+
+  function closeModal() {
+    if (joinModal) {
+      joinModal.style.display = 'none';
+      if (googleFormIframe) {
+        googleFormIframe.src = 'about:blank';
       }
     }
   }
@@ -726,13 +745,13 @@ function initJoinModal() {
 
   if (closeJoinModalBtn) {
     closeJoinModalBtn.addEventListener('click', () => {
-      joinModal.style.display = 'none';
+      closeModal();
     });
   }
 
   window.addEventListener('click', (event) => {
     if (event.target === joinModal) {
-      joinModal.style.display = 'none';
+      closeModal();
     }
   });
 }
